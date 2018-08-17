@@ -1,0 +1,535 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Ciiva.Api.Dto</name>
+    </assembly>
+    <members>
+        <member name="T:Ciiva.Api.Dto.AuthenticationRequest">
+            <summary>
+            Authentication request.
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.AuthenticationRequest.Username">
+            <summary>
+            Use API Key to authenticate.
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.AuthenticationRequest.Password">
+            <summary>
+            Password to authenticate.
+            </summary>
+        </member>
+        <member name="T:Ciiva.Api.Dto.AuthenticationResponse">
+            <summary>
+            Authentication response.
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.AuthenticationResponse.SessionId">
+            <summary>
+            SessionId must be attahed to subsequence requests sending to server for validation.
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.AuthenticationResponse.Username">
+            <summary>
+            Username has been authenticated successfully with the SessionId.
+            </summary>
+        </member>
+        <member name="T:Ciiva.Api.Dto.GetPartNumberSuggestion">
+            <example>
+            Parameters:
+            {"PW1"}
+            
+             Return:
+            { "Description" : "PW1 | Mallory Sonalert Products,
+              "ManufacturerComponentId" : 16,
+              "ManufacturerName" : "Mallory Sonalert Products",
+              "ManufacturerPartNumber" : "PW1"
+            }
+            </example>
+            <creditcost>1</creditcost>
+        </member>
+        <member name="P:Ciiva.Api.Dto.GetPartNumberSuggestion.PartNumber">
+            <summary>
+            Manufacturer component id
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.GetPartNumberSuggestion.Limit">
+            <summary>
+            Maximum mumber of records to return; in range [0,10]
+            </summary>
+        </member>
+        <member name="T:Ciiva.Api.Dto.ManufacturerComponentDetail">
+            <summary>
+            Manufacturer component structure.
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.ManufacturerComponentDetail.Description">
+            <summary>
+            Description
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.ManufacturerComponentDetail.ManufacturerComponentId">
+            <summary>
+            Manufacturer component id
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.ManufacturerComponentDetail.ManufacturerName">
+            <summary>
+            Manufacture name
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.ManufacturerComponentDetail.ManufacturerNameAlias">
+            <summary>
+            Alternative names of this manufacturer
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.ManufacturerComponentDetail.ManufacturerPartImageURL">
+            <summary>
+            Manufacturer Part Image URL
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.ManufacturerComponentDetail.ManufacturerPartNumber">
+            <summary>
+            Manufacture part number
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.ManufacturerComponentDetail.ManufacturerPartURL">
+            <summary>
+            Manufacturer Part URL
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.ManufacturerComponentDetail.LifeCycleStatusId">
+            <summary>
+            Life cycle status id
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.ManufacturerComponentDetail.LifeCycleStatusName">
+            <summary>
+            Life cycle status
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.ManufacturerComponentDetail.TechnicalDetails">
+            <summary>
+            Technical details.
+            </summary>
+        </member>
+        <member name="T:Ciiva.Api.Dto.PartNumberSuggestion">
+            <summary>
+            Manufacturer component structure.
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.PartNumberSuggestion.ManufacturerComponentId">
+            <summary>
+            Manufacturer component id
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.PartNumberSuggestion.ManufacturerName">
+            <summary>
+            Manufacture name
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.PartNumberSuggestion.ManufacturerPartNumber">
+            <summary>
+            Manufacture part number
+            </summary>
+        </member>
+        <member name="T:Ciiva.Api.Dto.StockItem">
+            <summary>
+            Detail stock info structure.
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.StockItem.LocationName">
+            <summary>
+            Location name.
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.StockItem.Quantity">
+            <summary>
+            Quantity
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.StockItem.LeadTime">
+            <summary>
+            Lead time.
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.StockItem.ValidDate">
+            <summary>
+            Valid date.
+            </summary>
+        </member>
+        <member name="T:Ciiva.Api.Dto.CurrentPrice">
+            <summary>
+            Current price structure of a supplier component.
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.CurrentPrice.SupplierComponentId">
+            <summary>
+            Ciiva Id of supplier component to retrieve price.
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.CurrentPrice.IsRealtime">
+            <summary>
+            These are realtime prices.
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.CurrentPrice.PriceBreaks">
+            <summary>
+            List of price breaks.
+            </summary>
+        </member>
+        <member name="T:Ciiva.Api.Dto.CurrentPriceBreak">
+            <summary>
+            Price break structure.
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.CurrentPriceBreak.MinQuantity">
+            <summary>
+            Mininum order quantity to acquire this unit price.
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.CurrentPriceBreak.UnitPrice">
+            <summary>
+            Unit price.
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.CurrentPriceBreak.CurrencyName">
+            <summary>
+            Currency name.
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.CurrentPriceBreak.LocationName">
+            <summary>
+            Location of sale.
+            </summary>
+        </member>
+        <member name="T:Ciiva.Api.Dto.HistoricalPrice">
+            <summary>
+            Historical price struct of an supplier component.
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.HistoricalPrice.SupplierComponentId">
+            <summary>
+            Id of supplier component.
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.HistoricalPrice.PriceBreaks">
+            <summary>
+            Price breaks.
+            </summary>
+        </member>
+        <member name="T:Ciiva.Api.Dto.HistoricalPriceBreak">
+            <summary>
+            Historial price structure.
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.HistoricalPriceBreak.StartDate">
+            <summary>
+            Start date.
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.HistoricalPriceBreak.EndDate">
+            <summary>
+            End date.
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.HistoricalPriceBreak.MinQuantity">
+            <summary>
+            MinQuantity
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.HistoricalPriceBreak.UnitPrice">
+            <summary>
+            UnitPrice
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.HistoricalPriceBreak.CurrencyName">
+            <summary>
+            Currency name.
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.HistoricalPriceBreak.LocationName">
+            <summary>
+            Location name.
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.GetStockForMultipleSupplierComponentsById.SupplierComponentIds">
+            <summary>
+            List of Ids of supplier components.
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.GetStockForMultipleSupplierComponentsById.UseRealTime">
+            <summary>
+            Query realtime stock info.
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.GetStockForSupplierComponentById.SupplierComponentId">
+            <summary>
+            Id of supplier component.
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.GetStockForSupplierComponentById.UseRealTime">
+            <summary>
+            Query realtime stock info.
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.GetPricingForMultipleSupplierComponentsById.SupplierComponentIds">
+            <summary>
+            List of Ids of supplier components.
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.GetPricingForMultipleSupplierComponentsById.UseRealTime">
+            <summary>
+            Query realtime prices.
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.GetPricingForSupplierComponentById.SupplierComponentId">
+            <summary>
+            Id of supplier component.
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.GetPricingForSupplierComponentById.UseRealTime">
+            <summary>
+            Query realtime prices.
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.GetSupplierComponentById.SupplierComponentId">
+            <summary>
+            Ids of supplier components.
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.GetSupplierComponentsByManufacturerComponentId.ManufacturerComponentId">
+            <summary>
+            Id of manufacturer component.
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.GetSupplierComponentsByManufacturerComponentId.Limit">
+            <summary>
+            Max mumber of records to return; in range 0..100.
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.GetSupplierComponentsByPartNumber.SupplierName">
+            <summary>
+            Supplier name.
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.GetSupplierComponentsByPartNumber.SupplierPartNumber">
+            <summary>
+            Supplier part number.
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.GetSupplierComponentsByPartNumber.ExactMatch">
+            <summary>
+            Exact match.
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.GetSupplierComponentsByPartNumber.Limit">
+            <summary>
+            Max mumber of records to return; in range 0..100.
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.GetAlternativeManufacturerComponentsById.ManufacturerComponentId">
+            <summary>
+            Id of manufacturer component.
+            </summary>
+            <example>
+            Example: 128
+            </example>
+        </member>
+        <member name="P:Ciiva.Api.Dto.GetAlternativeManufacturerComponentsById.Limit">
+            <summary>
+            Max mumber of records to return; in range 0..100.
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.GetManufacturerComponentById.ManufacturerComponentId">
+            <summary>
+            Id of manufacturer component.
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.GetManufacturerComponentsByPartNumber.ManufacturerName">
+            <summary>
+            Manufacturer name.
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.GetManufacturerComponentsByPartNumber.ManufacturerPartNumber">
+            <summary>
+            Manufacturer part number.
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.GetManufacturerComponentsByPartNumber.ExactMatch">
+            <summary>
+            Exact match.
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.GetManufacturerComponentsByPartNumber.ExtraInfo">
+            <summary>
+            Include Technical details in result.
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.GetManufacturerComponentsByPartNumber.Limit">
+            <summary>
+            Max mumber of records to return; in range 0..100.
+            </summary>
+        </member>
+        <member name="T:Ciiva.Api.Dto.ExchangeRateItem">
+            <summary>
+            Exchange rate structure.
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.ExchangeRateItem.CurrencyName">
+            <summary>
+            Currency name.
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.ExchangeRateItem.ExchangeRate">
+            <summary>
+            ExchangeRate.
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.ExchangeRateItem.Acronym">
+            <summary>
+            Acronym
+            </summary>
+        </member>
+        <member name="T:Ciiva.Api.Dto.Stock">
+            <summary>
+            Stock structure of an supplier component.
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.Stock.SupplierComponentId">
+            <summary>
+            Id of supplier component.
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.Stock.StockItems">
+            <summary>
+            Detail stock info.
+            </summary>
+        </member>
+        <member name="T:Ciiva.Api.Dto.ManufacturerComponent">
+            <summary>
+            Manufacturer component structure.
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.ManufacturerComponent.Description">
+            <summary>
+            Description
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.ManufacturerComponent.ManufacturerComponentId">
+            <summary>
+            Manufacturer component id
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.ManufacturerComponent.ManufacturerName">
+            <summary>
+            Manufacture name
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.ManufacturerComponent.ManufacturerNameAlias">
+            <summary>
+            Alternative names of this manufacturer
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.ManufacturerComponent.ManufacturerPartImageURL">
+            <summary>
+            Manufacturer Part Image URL
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.ManufacturerComponent.ManufacturerPartNumber">
+            <summary>
+            Manufacture part number
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.ManufacturerComponent.ManufacturerPartURL">
+            <summary>
+            Manufacturer Part URL
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.ManufacturerComponent.LifeCycleStatusId">
+            <summary>
+            Life cycle status id
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.ManufacturerComponent.LifeCycleStatusName">
+            <summary>
+            Life cycle status
+            </summary>
+        </member>
+        <member name="T:Ciiva.Api.Dto.SupplierComponent">
+            <summary>
+            Supplier component structure.
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.SupplierComponent.ManufacturerComponentId">
+            <summary>
+            Id of manufacturer component.
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.SupplierComponent.SupplierComponentId">
+            <summary>
+            Id of supplier component.
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.SupplierComponent.SupplierName">
+            <summary>
+            Supplier name.
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.SupplierComponent.SupplierPartNumber">
+            <summary>
+            Supplier part number.
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.SupplierComponent.Description">
+            <summary>
+            Description.
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.SupplierComponent.IsAuthorised">
+            <summary>
+            Authorised component.
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.SupplierComponent.DatasheetUrl">
+            <summary>
+            Datasheet Url.
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.SupplierComponent.DetailUrl">
+            <summary>
+            Detail Url.
+            </summary>
+        </member>
+        <member name="T:Ciiva.Api.Dto.GetManufacturerComponentsByDescriptiveSearch">
+            <summary>
+            Present request for matching BOM.
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.GetManufacturerComponentsByDescriptiveSearch.Description">
+            <summary>
+            Search key words.
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.GetManufacturerComponentsByDescriptiveSearch.Limit">
+            <summary>
+            Max mumber of records to return; in range 0..100.
+            </summary>
+        </member>
+        <member name="T:Ciiva.Api.Dto.TechnicalDetail">
+            <summary>
+            Technical detail structure.
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.TechnicalDetail.Name">
+            <summary>
+            Technical detail name
+            </summary>
+        </member>
+        <member name="P:Ciiva.Api.Dto.TechnicalDetail.Value">
+            <summary>
+            Technical detail value
+            </summary>
+        </member>
+    </members>
+</doc>

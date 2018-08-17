@@ -1,0 +1,50 @@
+G:\TestArea\ApiDemoProject\ApiDemo\bin\Debug\ApiDemo.exe.config
+G:\TestArea\ApiDemoProject\ApiDemo\obj\Debug\ApiDemo.MainForm.resources
+G:\TestArea\ApiDemoProject\ApiDemo\obj\Debug\ApiDemo.csproj.GenerateResource.Cache
+G:\TestArea\ApiDemoProject\ApiDemo\bin\Debug\CiivaIcon32.ico
+G:\TestArea\ApiDemoProject\ApiDemo\bin\Debug\ApiDemo.exe
+G:\TestArea\ApiDemoProject\ApiDemo\bin\Debug\ApiDemo.pdb
+G:\TestArea\ApiDemoProject\ApiDemo\bin\Debug\Ciiva.Api.Dto.dll
+G:\TestArea\ApiDemoProject\ApiDemo\bin\Debug\JsonViewer.dll
+G:\TestArea\ApiDemoProject\ApiDemo\bin\Debug\Newtonsoft.Json.dll
+G:\TestArea\ApiDemoProject\ApiDemo\bin\Debug\ServiceStack.Common.dll
+G:\TestArea\ApiDemoProject\ApiDemo\bin\Debug\ServiceStack.Interfaces.dll
+G:\TestArea\ApiDemoProject\ApiDemo\bin\Debug\ServiceStack.Text.dll
+G:\TestArea\ApiDemoProject\ApiDemo\bin\Debug\Ciiva.Api.Dto.pdb
+G:\TestArea\ApiDemoProject\ApiDemo\bin\Debug\Ciiva.Api.Dto.xml
+G:\TestArea\ApiDemoProject\ApiDemo\obj\Debug\ApiDemo.csprojResolveAssemblyReference.cache
+G:\TestArea\ApiDemoProject\ApiDemo\obj\Debug\ApiDemo.exe
+G:\TestArea\ApiDemoProject\ApiDemo\obj\Debug\ApiDemo.pdb
+G:\TestArea\ApiDemoProject\ApiDemo\bin\Debug\LumenWorks.Framework.IO.dll
+G:\TestArea\ApiDemoProject\ApiDemo\bin\Debug\LumenWorks.Framework.IO.xml
+G:\TestArea\ApiDemoProject\ApiDemo\bin\Debug\fastJSON.dll
+G:\TestArea\ApiDemoProject\ApiDemo\bin\Debug\fastJSON.pdb
+G:\TestArea\ApiDemoProject\ApiDemo\bin\Debug\ApiDemo.exe.manifest
+G:\TestArea\ApiDemoProject\ApiDemo\bin\Debug\ApiDemo.application
+G:\TestArea\ApiDemoProject\ApiDemo\obj\Debug\ApiDemo.exe.manifest
+G:\TestArea\ApiDemoProject\ApiDemo\obj\Debug\ApiDemo.application
+G:\Scripts\C Sharp\ApiDemoProject\ApiDemo\bin\Debug\ApiDemo.exe.config
+G:\Scripts\C Sharp\ApiDemoProject\ApiDemo\obj\Debug\ApiDemo.exe
+G:\Scripts\C Sharp\ApiDemoProject\ApiDemo\obj\Debug\ApiDemo.pdb
+G:\Scripts\C Sharp\ApiDemoProject\ApiDemo\bin\Debug\CiivaIcon32.ico
+G:\Scripts\C Sharp\ApiDemoProject\ApiDemo\bin\Debug\ApiDemo.exe.manifest
+G:\Scripts\C Sharp\ApiDemoProject\ApiDemo\bin\Debug\ApiDemo.application
+G:\Scripts\C Sharp\ApiDemoProject\ApiDemo\bin\Debug\ApiDemo.exe
+G:\Scripts\C Sharp\ApiDemoProject\ApiDemo\bin\Debug\ApiDemo.pdb
+G:\Scripts\C Sharp\ApiDemoProject\ApiDemo\bin\Debug\Ciiva.Api.Dto.dll
+G:\Scripts\C Sharp\ApiDemoProject\ApiDemo\bin\Debug\fastJSON.dll
+G:\Scripts\C Sharp\ApiDemoProject\ApiDemo\bin\Debug\JsonViewer.dll
+G:\Scripts\C Sharp\ApiDemoProject\ApiDemo\bin\Debug\LumenWorks.Framework.IO.dll
+G:\Scripts\C Sharp\ApiDemoProject\ApiDemo\bin\Debug\Newtonsoft.Json.dll
+G:\Scripts\C Sharp\ApiDemoProject\ApiDemo\bin\Debug\ServiceStack.Common.dll
+G:\Scripts\C Sharp\ApiDemoProject\ApiDemo\bin\Debug\ServiceStack.Interfaces.dll
+G:\Scripts\C Sharp\ApiDemoProject\ApiDemo\bin\Debug\ServiceStack.Text.dll
+G:\Scripts\C Sharp\ApiDemoProject\ApiDemo\bin\Debug\Ciiva.Api.Dto.pdb
+G:\Scripts\C Sharp\ApiDemoProject\ApiDemo\bin\Debug\Ciiva.Api.Dto.xml
+G:\Scripts\C Sharp\ApiDemoProject\ApiDemo\bin\Debug\fastJSON.pdb
+G:\Scripts\C Sharp\ApiDemoProject\ApiDemo\bin\Debug\LumenWorks.Framework.IO.xml
+G:\Scripts\C Sharp\ApiDemoProject\ApiDemo\obj\Debug\ApiDemo.MainForm.resources
+G:\Scripts\C Sharp\ApiDemoProject\ApiDemo\obj\Debug\ApiDemo.csproj.GenerateResource.Cache
+G:\Scripts\C Sharp\ApiDemoProject\ApiDemo\obj\Debug\ApiDemo.exe.manifest
+G:\Scripts\C Sharp\ApiDemoProject\ApiDemo\obj\Debug\ApiDemo.application
+G:\Scripts\C Sharp\ApiDemoProject\ApiDemo\obj\Debug\ApiDemo.csprojResolveAssemblyReference.cache

@@ -1,0 +1,5 @@
+C:\ProgramData\Altium\Altium Designer {4C9EC9D9-527C-4FDC-9F20-45B60B9652B0}\Extensions\ContentTeamTools\ContentTeamTools.dll
+C:\ProgramData\Altium\Altium Designer {4C9EC9D9-527C-4FDC-9F20-45B60B9652B0}\Extensions\ContentTeamTools\ContentTeamTools.pdb
+G:\Scripts\C Sharp\Content Team Tools\ContentTeamTools\obj\Debug\ContentTeamTools.dll
+G:\Scripts\C Sharp\Content Team Tools\ContentTeamTools\obj\Debug\ContentTeamTools.pdb
+G:\Scripts\C Sharp\Content Team Tools\ContentTeamTools\obj\Debug\ContentTeamTools.csprojResolveAssemblyReference.cache

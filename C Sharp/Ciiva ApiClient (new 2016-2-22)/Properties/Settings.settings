@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ApiClient.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="PrincipalServer" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://178.33.36.40/PrincipalServer/api</Value>
+    </Setting>
+    <Setting Name="ApiServer" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://api.ciiva.com/api</Value>
+    </Setting>
+    <Setting Name="ApiKey" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+  </Settings>
+</SettingsFile>

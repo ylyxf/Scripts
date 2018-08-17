@@ -1,0 +1,9 @@
+G:\Scripts\C Sharp\Ciiva API Library\Ciiva API\bin\Debug\Ciiva.ApiServer.SVS.ClientDto.dll
+G:\Scripts\C Sharp\Ciiva API Library\Ciiva API\bin\Debug\ServiceStack.Common.dll
+G:\Scripts\C Sharp\Ciiva API Library\Ciiva API\bin\Debug\ServiceStack.Interfaces.dll
+G:\Scripts\C Sharp\Ciiva API Library\Ciiva API\bin\Debug\ServiceStack.Text.dll
+G:\Scripts\C Sharp\Ciiva API Library\Ciiva API\bin\Debug\CiivaApis.dll
+G:\Scripts\C Sharp\Ciiva API Library\Ciiva API\bin\Debug\CiivaApis.pdb
+G:\Scripts\C Sharp\Ciiva API Library\Ciiva API\obj\Debug\CiivaApis.dll
+G:\Scripts\C Sharp\Ciiva API Library\Ciiva API\obj\Debug\CiivaApis.pdb
+G:\Scripts\C Sharp\Ciiva API Library\Ciiva API\obj\Debug\Ciiva API.csprojResolveAssemblyReference.cache

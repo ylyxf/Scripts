@@ -1,0 +1,7 @@
+G:\TestArea\ApiDemoProject\fastJSON_v2.1.12\consoletest\bin\Debug\consoletest.exe
+G:\TestArea\ApiDemoProject\fastJSON_v2.1.12\consoletest\bin\Debug\consoletest.pdb
+G:\TestArea\ApiDemoProject\fastJSON_v2.1.12\consoletest\bin\Debug\fastJSON.dll
+G:\TestArea\ApiDemoProject\fastJSON_v2.1.12\consoletest\bin\Debug\fastJSON.pdb
+G:\TestArea\ApiDemoProject\fastJSON_v2.1.12\consoletest\obj\Debug\consoletest.csprojResolveAssemblyReference.cache
+G:\TestArea\ApiDemoProject\fastJSON_v2.1.12\consoletest\obj\Debug\consoletest.exe
+G:\TestArea\ApiDemoProject\fastJSON_v2.1.12\consoletest\obj\Debug\consoletest.pdb

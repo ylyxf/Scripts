@@ -1,0 +1,5 @@
+G:\TestArea\ApiDemoProject\fastJSON_v2.1.12\output\net40\fastJSON.dll
+G:\TestArea\ApiDemoProject\fastJSON_v2.1.12\output\net40\fastJSON.pdb
+G:\TestArea\ApiDemoProject\fastJSON_v2.1.12\fastJSON\obj\Debug\fastJSON.csprojResolveAssemblyReference.cache
+G:\TestArea\ApiDemoProject\fastJSON_v2.1.12\fastJSON\obj\Debug\fastJSON.dll
+G:\TestArea\ApiDemoProject\fastJSON_v2.1.12\fastJSON\obj\Debug\fastJSON.pdb

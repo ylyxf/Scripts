@@ -1,0 +1,5 @@
+setDbConnectionInfo( "production","altiumjh", "jdbc:mysql://209.61.136.165/", "altiumjh_12!.");
+  setDbConnectionInfo( "localvm", "root", "jdbc:mysql://shacontentdb.protel.com.au/", "xxxxx"  );
+
+Query Database(Distribute):
+shanghaicontentteam

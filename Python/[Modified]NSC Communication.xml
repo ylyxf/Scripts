@@ -1,0 +1,581 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TComponentSet CurrentRevColumnWidth="100" NameColumnWidth="300" NextRevColumnWidth="100" id="0">
+  <LifeCycleDefinitionGUID id="1">C49BAAE1-4B93-4C84-9FD7-CC93C2E8574D</LifeCycleDefinitionGUID>
+  <RevisionNamingSchemeGUID id="2">1C7FB9EE-333C-4E69-AEDB-057152119FFC</RevisionNamingSchemeGUID>
+  <VaultGUID id="3">B7D15EC3-160A-466F-A46C-7801FE6295A7</VaultGUID>
+  <VaultName id="4">Altium Content Vault</VaultName>
+  <RequiredParameters id="5">
+    <TRequiredParameter ColumnWidth="100" id="6">
+      <HRID id="7">Code_IPC</HRID>
+      <Visible id="8">true</Visible>
+      <IsRequired id="9">false</IsRequired>
+      <DataType id="10">Text</DataType>
+      <ParamType id="11">4884412E-AAD1-4E69-922A-23C1C75250B1</ParamType>
+      <DefaultValue id="12" />
+      <IsReadOnly id="13">false</IsReadOnly>
+    </TRequiredParameter>
+    <TRequiredParameter ColumnWidth="100" id="14">
+      <HRID id="15">Code_JEDEC</HRID>
+      <Visible id="16">true</Visible>
+      <IsRequired id="17">false</IsRequired>
+      <DataType id="18">Text</DataType>
+      <ParamType id="19">4884412E-AAD1-4E69-922A-23C1C75250B1</ParamType>
+      <DefaultValue id="20" />
+      <IsReadOnly id="21">false</IsReadOnly>
+    </TRequiredParameter>
+    <TRequiredParameter ColumnWidth="100" id="22">
+      <HRID id="23">Comment</HRID>
+      <Visible id="24">true</Visible>
+      <IsRequired id="25">false</IsRequired>
+      <DataType id="26">Text</DataType>
+      <ParamType id="27">4884412E-AAD1-4E69-922A-23C1C75250B1</ParamType>
+      <DefaultValue id="28" />
+      <IsReadOnly id="29">false</IsReadOnly>
+    </TRequiredParameter>
+    <TRequiredParameter ColumnWidth="100" id="30">
+      <HRID id="31">ComponentLink1Description</HRID>
+      <Visible id="32">true</Visible>
+      <IsRequired id="33">false</IsRequired>
+      <DataType id="34">Text</DataType>
+      <ParamType id="35">4884412E-AAD1-4E69-922A-23C1C75250B1</ParamType>
+      <DefaultValue id="36" />
+      <IsReadOnly id="37">false</IsReadOnly>
+    </TRequiredParameter>
+    <TRequiredParameter ColumnWidth="100" id="38">
+      <HRID id="39">ComponentLink1URL</HRID>
+      <Visible id="40">true</Visible>
+      <IsRequired id="41">false</IsRequired>
+      <DataType id="42">Text</DataType>
+      <ParamType id="43">4884412E-AAD1-4E69-922A-23C1C75250B1</ParamType>
+      <DefaultValue id="44" />
+      <IsReadOnly id="45">false</IsReadOnly>
+    </TRequiredParameter>
+    <TRequiredParameter ColumnWidth="100" id="46">
+      <HRID id="47">ComponentLink2Description</HRID>
+      <Visible id="48">true</Visible>
+      <IsRequired id="49">false</IsRequired>
+      <DataType id="50">Text</DataType>
+      <ParamType id="51">4884412E-AAD1-4E69-922A-23C1C75250B1</ParamType>
+      <DefaultValue id="52" />
+      <IsReadOnly id="53">false</IsReadOnly>
+    </TRequiredParameter>
+    <TRequiredParameter ColumnWidth="100" id="54">
+      <HRID id="55">ComponentLink2URL</HRID>
+      <Visible id="56">true</Visible>
+      <IsRequired id="57">false</IsRequired>
+      <DataType id="58">Text</DataType>
+      <ParamType id="59">4884412E-AAD1-4E69-922A-23C1C75250B1</ParamType>
+      <DefaultValue id="60" />
+      <IsReadOnly id="61">false</IsReadOnly>
+    </TRequiredParameter>
+    <TRequiredParameter ColumnWidth="100" id="62">
+      <HRID id="63">ComponentLink3Description</HRID>
+      <Visible id="64">true</Visible>
+      <IsRequired id="65">false</IsRequired>
+      <DataType id="66">Text</DataType>
+      <ParamType id="67">4884412E-AAD1-4E69-922A-23C1C75250B1</ParamType>
+      <DefaultValue id="68" />
+      <IsReadOnly id="69">false</IsReadOnly>
+    </TRequiredParameter>
+    <TRequiredParameter ColumnWidth="100" id="70">
+      <HRID id="71">ComponentLink3URL</HRID>
+      <Visible id="72">true</Visible>
+      <IsRequired id="73">false</IsRequired>
+      <DataType id="74">Text</DataType>
+      <ParamType id="75">4884412E-AAD1-4E69-922A-23C1C75250B1</ParamType>
+      <DefaultValue id="76" />
+      <IsReadOnly id="77">false</IsReadOnly>
+    </TRequiredParameter>
+    <TRequiredParameter ColumnWidth="100" id="78">
+      <HRID id="79">CompType</HRID>
+      <Visible id="80">true</Visible>
+      <IsRequired id="81">false</IsRequired>
+      <DataType id="82">Text</DataType>
+      <ParamType id="83">4884412E-AAD1-4E69-922A-23C1C75250B1</ParamType>
+      <DefaultValue id="84" />
+      <IsReadOnly id="85">false</IsReadOnly>
+    </TRequiredParameter>
+    <TRequiredParameter ColumnWidth="100" id="86">
+      <HRID id="87">DatasheetVersion</HRID>
+      <Visible id="88">true</Visible>
+      <IsRequired id="89">false</IsRequired>
+      <DataType id="90">Text</DataType>
+      <ParamType id="91">4884412E-AAD1-4E69-922A-23C1C75250B1</ParamType>
+      <DefaultValue id="92" />
+      <IsReadOnly id="93">false</IsReadOnly>
+    </TRequiredParameter>
+    <TRequiredParameter ColumnWidth="100" id="94">
+      <HRID id="95">Description</HRID>
+      <Visible id="96">true</Visible>
+      <IsRequired id="97">false</IsRequired>
+      <DataType id="98">Text</DataType>
+      <ParamType id="99">4884412E-AAD1-4E69-922A-23C1C75250B1</ParamType>
+      <DefaultValue id="100" />
+      <IsReadOnly id="101">false</IsReadOnly>
+    </TRequiredParameter>
+    <TRequiredParameter ColumnWidth="100" id="102">
+      <HRID id="103">Manufacturer</HRID>
+      <Visible id="104">true</Visible>
+      <IsRequired id="105">false</IsRequired>
+      <DataType id="106">Text</DataType>
+      <ParamType id="107">4884412E-AAD1-4E69-922A-23C1C75250B1</ParamType>
+      <DefaultValue id="108" />
+      <IsReadOnly id="109">false</IsReadOnly>
+    </TRequiredParameter>
+    <TRequiredParameter ColumnWidth="100" id="110">
+      <HRID id="111">PackageDescription</HRID>
+      <Visible id="112">true</Visible>
+      <IsRequired id="113">false</IsRequired>
+      <DataType id="114">Text</DataType>
+      <ParamType id="115">4884412E-AAD1-4E69-922A-23C1C75250B1</ParamType>
+      <DefaultValue id="116" />
+      <IsReadOnly id="117">false</IsReadOnly>
+    </TRequiredParameter>
+    <TRequiredParameter ColumnWidth="100" id="118">
+      <HRID id="119">PackageReference</HRID>
+      <Visible id="120">true</Visible>
+      <IsRequired id="121">false</IsRequired>
+      <DataType id="122">Text</DataType>
+      <ParamType id="123">4884412E-AAD1-4E69-922A-23C1C75250B1</ParamType>
+      <DefaultValue id="124" />
+      <IsReadOnly id="125">false</IsReadOnly>
+    </TRequiredParameter>
+    <TRequiredParameter ColumnWidth="100" id="126">
+      <HRID id="127">PackageTopMarking</HRID>
+      <Visible id="128">true</Visible>
+      <IsRequired id="129">false</IsRequired>
+      <DataType id="130">Text</DataType>
+      <ParamType id="131">4884412E-AAD1-4E69-922A-23C1C75250B1</ParamType>
+      <DefaultValue id="132" />
+      <IsReadOnly id="133">false</IsReadOnly>
+    </TRequiredParameter>
+    <TRequiredParameter ColumnWidth="100" id="134">
+      <HRID id="135">PackageVersion</HRID>
+      <Visible id="136">true</Visible>
+      <IsRequired id="137">false</IsRequired>
+      <DataType id="138">Text</DataType>
+      <ParamType id="139">4884412E-AAD1-4E69-922A-23C1C75250B1</ParamType>
+      <DefaultValue id="140" />
+      <IsReadOnly id="141">false</IsReadOnly>
+    </TRequiredParameter>
+    <TRequiredParameter ColumnWidth="100" id="142">
+      <HRID id="143">PinCount</HRID>
+      <Visible id="144">true</Visible>
+      <IsRequired id="145">false</IsRequired>
+      <DataType id="146">Text</DataType>
+      <ParamType id="147">4884412E-AAD1-4E69-922A-23C1C75250B1</ParamType>
+      <DefaultValue id="148" />
+      <IsReadOnly id="149">false</IsReadOnly>
+    </TRequiredParameter>
+    <TRequiredParameter ColumnWidth="100" id="150">
+      <HRID id="151">PowerWise</HRID>
+      <Visible id="152">true</Visible>
+      <IsRequired id="153">false</IsRequired>
+      <DataType id="154">Text</DataType>
+      <ParamType id="155">4884412E-AAD1-4E69-922A-23C1C75250B1</ParamType>
+      <DefaultValue id="156" />
+      <IsReadOnly id="157">false</IsReadOnly>
+    </TRequiredParameter>
+    <TRequiredParameter ColumnWidth="100" id="158">
+      <HRID id="159">RevisionNote</HRID>
+      <Visible id="160">true</Visible>
+      <IsRequired id="161">false</IsRequired>
+      <DataType id="162">Text</DataType>
+      <ParamType id="163">4884412E-AAD1-4E69-922A-23C1C75250B1</ParamType>
+      <DefaultValue id="164" />
+      <IsReadOnly id="165">false</IsReadOnly>
+    </TRequiredParameter>
+    <TRequiredParameter ColumnWidth="100" id="166">
+      <HRID id="167">RoHS</HRID>
+      <Visible id="168">true</Visible>
+      <IsRequired id="169">false</IsRequired>
+      <DataType id="170">Text</DataType>
+      <ParamType id="171">4884412E-AAD1-4E69-922A-23C1C75250B1</ParamType>
+      <DefaultValue id="172" />
+      <IsReadOnly id="173">false</IsReadOnly>
+    </TRequiredParameter>
+  </RequiredParameters>
+  <RequiredModels id="174">
+    <TRequiredModel ColumnWidth="100" id="175">
+      <HRID id="176">PCBLIB</HRID>
+      <Visible id="177">true</Visible>
+      <ModelKind id="178">PCBLIB</ModelKind>
+      <IsRequired id="179">false</IsRequired>
+      <FromTemplate id="180">false</FromTemplate>
+      <IsReadOnly id="181">false</IsReadOnly>
+    </TRequiredModel>
+    <TRequiredModel ColumnWidth="100" id="182">
+      <HRID id="183">PCBLIB 1</HRID>
+      <Visible id="184">true</Visible>
+      <ModelKind id="185">PCBLIB</ModelKind>
+      <IsRequired id="186">false</IsRequired>
+      <FromTemplate id="187">false</FromTemplate>
+      <IsReadOnly id="188">false</IsReadOnly>
+    </TRequiredModel>
+    <TRequiredModel ColumnWidth="100" id="189">
+      <HRID id="190">PCBLIB 2</HRID>
+      <Visible id="191">true</Visible>
+      <ModelKind id="192">PCBLIB</ModelKind>
+      <IsRequired id="193">false</IsRequired>
+      <FromTemplate id="194">false</FromTemplate>
+      <IsReadOnly id="195">false</IsReadOnly>
+    </TRequiredModel>
+    <TRequiredModel ColumnWidth="100" id="196">
+      <HRID id="197">SCHLIB</HRID>
+      <Visible id="198">true</Visible>
+      <ModelKind id="199">SCHLIB</ModelKind>
+      <IsRequired id="200">false</IsRequired>
+      <FromTemplate id="201">false</FromTemplate>
+      <IsReadOnly id="202">false</IsReadOnly>
+    </TRequiredModel>
+  </RequiredModels>
+  <RequiredComponentTypes ColumnWidth="100" id="203">
+    <Visible id="204">true</Visible>
+    <IsRequired id="205">false</IsRequired>
+    <DataType id="206">ComponentType</DataType>
+    <IsReadOnly id="207">false</IsReadOnly>
+  </RequiredComponentTypes>
+  <ModelLinks id="208">
+    <TModelLink id="209">
+      <HRID id="210">SYM-0018-00270-1</HRID>
+      <VaultGUID id="211">B7D15EC3-160A-466F-A46C-7801FE6295A7</VaultGUID>
+      <ItemGUID id="212">DA4F6260-44E6-44CB-8023-0F48E67D3775</ItemGUID>
+      <ModelKind id="213">SCHLIB</ModelKind>
+      <RevisionGUID id="214">79122D78-5758-4BA1-97CE-06414DBC2AD9</RevisionGUID>
+      <RevisionId id="215">1</RevisionId>
+      <FromTemplate id="216">false</FromTemplate>
+    </TModelLink>
+  <TModelLink id="217"><HRID id="218">PCC-0003-00002-1</HRID><VaultGUID id="219">B7D15EC3-160A-466F-A46C-7801FE6295A7</VaultGUID><ItemGUID id="220">E5BBA756-5E18-4C65-88BE-FD31049CC02B</ItemGUID><ModelKind id="221">PCBLIB</ModelKind><RevisionGUID id="222">596BFF1E-4586-4A48-909B-7124595F4ACC</RevisionGUID><RevisionId id="223">1</RevisionId><FromTemplate id="224">false</FromTemplate></TModelLink></ModelLinks>
+  <PartChoiceListLinks StateIndex="2" id="225">
+    <ComponentSet href="#0" id="226" />
+    <ItemNamingScheme id="227">PCL-{00000}</ItemNamingScheme>
+  </PartChoiceListLinks>
+  <TopGroup Collapsed="false" StateIndex="2" id="228">
+    <Parameters id="229" />
+    <ModelChoices id="230" />
+    <ComponentTypes id="231" />
+    <ComponentSet href="#0" id="232" />
+    <ItemNamingScheme id="233">CMP-{00000}</ItemNamingScheme>
+    <Groups id="234">
+      <TGroup Collapsed="false" StateIndex="2" id="235">
+        <HRID id="236">Unified Components</HRID>
+        <ParentGroup href="#27" id="237" />
+        <Parameters id="238" />
+        <ModelChoices id="239" />
+        <ComponentTypes id="240" />
+        <ComponentSet href="#0" id="241" />
+        <Groups id="242">
+          <TGroup Collapsed="false" StateIndex="2" id="243">
+            <HRID id="244">Components</HRID>
+            <ParentGroup href="#28" id="245" />
+            <Parameters id="246" />
+            <ModelChoices id="247" />
+            <ComponentTypes id="248" />
+            <ComponentSet href="#0" id="249" />
+            <Groups id="250">
+              <TGroup Collapsed="false" StateIndex="2" id="251">
+                <HRID id="252">National Semiconductor</HRID>
+                <ParentGroup href="#29" id="253" />
+                <Parameters id="254" />
+                <ModelChoices id="255" />
+                <ComponentTypes id="256" />
+                <ComponentSet href="#0" id="257" />
+                <Groups id="258">
+                  <TGroup Collapsed="false" StateIndex="2" id="259">
+                    <HRID id="260">Communication</HRID>
+                    <GUID id="261">3A10DDCD-360A-4708-AE81-593EFCF114E9</GUID>
+                    <ParentGroup href="#30" id="262" />
+                    <Parameters id="263" />
+                    <ModelChoices id="264" />
+                    <ComponentTypes id="265" />
+                    <ComponentSet href="#0" id="266" />
+                    <Groups id="267" />
+                    <ComponentDefinitions id="268" />
+                    <Path id="269">Unified Components\Components\National Semiconductor\Communication</Path>
+                    <IsDefaultGroup id="270">true</IsDefaultGroup>
+                  </TGroup>
+                </Groups>
+                <ComponentDefinitions id="271" />
+                <Path id="272">Unified Components\Components\National Semiconductor</Path>
+                <IsDefaultGroup id="273">false</IsDefaultGroup>
+              </TGroup>
+            </Groups>
+            <ComponentDefinitions id="274" />
+            <Path id="275">Unified Components\Components</Path>
+            <IsDefaultGroup id="276">false</IsDefaultGroup>
+          </TGroup>
+        </Groups>
+        <ComponentDefinitions id="277" />
+        <Path id="278">Unified Components</Path>
+        <IsDefaultGroup id="279">false</IsDefaultGroup>
+      </TGroup>
+      <TGroup Collapsed="false" StateIndex="2" id="280">
+        <HRID id="281">Communication</HRID>
+        <GUID id="282">3A10DDCD-360A-4708-AE81-593EFCF114E9</GUID>
+        <ParentGroup href="#27" id="283" />
+        <Parameters id="284" />
+        <ModelChoices id="285" />
+        <ComponentTypes id="286" />
+        <ComponentSet href="#0" id="287" />
+        <Groups id="288" />
+        <ComponentDefinitions id="289">
+          <TComponentDefinition StateIndex="2" id="290">
+            <HRID id="291">CMP-0059-00002</HRID>
+            <GUID id="292">7ACF7FAE-20A7-4666-BDBB-F5DB473B0302</GUID>
+            <ParentGroup href="#32" id="293" />
+            <Parameters id="294">
+              <TParameter id="295">
+                <RequiredParameter href="#3" id="296" />
+                <Value id="297">LMC568CM/NOPB</Value>
+                <RealValue id="298">NaN</RealValue>
+              </TParameter>
+              <TParameter id="299">
+                <RequiredParameter href="#12" id="300" />
+                <Value id="301">Low Power Phase-Locked Loop, 8-pin Narrow SOIC, Pb-Free</Value>
+                <RealValue id="302">NaN</RealValue>
+              </TParameter>
+              <TParameter id="303">
+                <RequiredParameter href="#6" id="304" />
+                <Value id="305">LMC568 Web Page</Value>
+                <RealValue id="306">NaN</RealValue>
+              </TParameter>
+              <TParameter id="307">
+                <RequiredParameter href="#13" id="308" />
+                <Value id="309">National Semiconductor</Value>
+                <RealValue id="310">NaN</RealValue>
+              </TParameter>
+              <TParameter id="311">
+                <RequiredParameter href="#5" id="312" />
+                <Value id="313">http://www.national.com/ds/LM/LMC568.pdf</Value>
+                <RealValue id="314">NaN</RealValue>
+              </TParameter>
+              <TParameter id="315">
+                <RequiredParameter href="#11" id="316" />
+                <Value id="317">May-1999</Value>
+                <RealValue id="318">NaN</RealValue>
+              </TParameter>
+              <TParameter id="319">
+                <RequiredParameter href="#10" id="320" />
+                <Value id="321">Analog IC</Value>
+                <RealValue id="322">NaN</RealValue>
+              </TParameter>
+              <TParameter id="323">
+                <RequiredParameter href="#8" id="324" />
+                <Value id="325">M08A Package Page</Value>
+                <RealValue id="326">NaN</RealValue>
+              </TParameter>
+              <TParameter id="327">
+                <RequiredParameter href="#14" id="328" />
+                <Value id="329">SOIC Narrow, 4.9 x 3.9 x 1.45mm, 8 Lead, 1.27mm Pitch</Value>
+                <RealValue id="330">NaN</RealValue>
+              </TParameter>
+              <TParameter id="331">
+                <RequiredParameter href="#15" id="332" />
+                <Value id="333">M08A</Value>
+                <RealValue id="334">NaN</RealValue>
+              </TParameter>
+              <TParameter id="335">
+                <RequiredParameter href="#9" id="336" />
+                <Value id="337">http://www.national.com/packaging/folders/m08a.html</Value>
+                <RealValue id="338">NaN</RealValue>
+              </TParameter>
+              <TParameter id="339">
+                <RequiredParameter href="#4" id="340" />
+                <Value id="341">LMC568 Datasheet</Value>
+                <RealValue id="342">NaN</RealValue>
+              </TParameter>
+              <TParameter id="343">
+                <RequiredParameter href="#1" id="344" />
+                <Value id="345">SOIC127P600-8</Value>
+                <RealValue id="346">NaN</RealValue>
+              </TParameter>
+              <TParameter id="347">
+                <RequiredParameter href="#16" id="348" />
+                <Value id="349">NSZXTT*LMC*568CM</Value>
+                <RealValue id="350">NaN</RealValue>
+              </TParameter>
+              <TParameter id="351">
+                <RequiredParameter href="#19" id="352" />
+                <Value id="353">N</Value>
+                <RealValue id="354">NaN</RealValue>
+              </TParameter>
+              <TParameter id="355">
+                <RequiredParameter href="#17" id="356" />
+                <Value id="357">revM, May-2009</Value>
+                <RealValue id="358">NaN</RealValue>
+              </TParameter>
+              <TParameter id="359">
+                <RequiredParameter href="#18" id="360" />
+                <Value id="361">8</Value>
+                <RealValue id="362">NaN</RealValue>
+              </TParameter>
+              <TParameter id="363">
+                <RequiredParameter href="#7" id="364" />
+                <Value id="365">http://www.national.com/pf/LM/LMC568.html</Value>
+                <RealValue id="366">NaN</RealValue>
+              </TParameter>
+              <TParameter id="367">
+                <RequiredParameter href="#2" id="368" />
+                <Value id="369">MS-012-AA</Value>
+                <RealValue id="370">NaN</RealValue>
+              </TParameter>
+              <TParameter id="371">
+                <RequiredParameter href="#20" id="372" />
+                <Value id="373">Component URLs added</Value>
+                <RealValue id="374">NaN</RealValue>
+              </TParameter>
+              <TParameter id="375">
+                <RequiredParameter href="#21" id="376" />
+                <Value id="377">Y</Value>
+                <RealValue id="378">NaN</RealValue>
+              </TParameter>
+            </Parameters>
+            <ModelChoices id="379">
+              <TModelChoice id="380">
+                <RequiredModel href="#25" id="381" />
+                <ModelLink href="#26" id="382" />
+              </TModelChoice>
+            </ModelChoices>
+            <ComponentTypes id="383" />
+            <ItemHRID id="384">CMP-0059-00002</ItemHRID>
+            <RevisionGUID id="385">4AE47AFB-E0E9-4E0D-BF33-A5A8CD3225FC</RevisionGUID>
+            <RevisionId id="386">2</RevisionId>
+          </TComponentDefinition>
+          <TComponentDefinition StateIndex="2" id="387">
+            <HRID id="388">CMP-0059-00001</HRID>
+            <GUID id="389">815077F3-17AD-48E8-9ED0-F57716CCDA7E</GUID>
+            <ParentGroup href="#32" id="390" />
+            <Parameters id="391">
+              <TParameter id="392">
+                <RequiredParameter href="#3" id="393" />
+                <Value id="394">LMC568CM</Value>
+                <RealValue id="395">NaN</RealValue>
+              </TParameter>
+              <TParameter id="396">
+                <RequiredParameter href="#12" id="397" />
+                <Value id="398">Low Power Phase-Locked Loop, 8-pin Narrow SOIC</Value>
+                <RealValue id="399">NaN</RealValue>
+              </TParameter>
+              <TParameter id="400">
+                <RequiredParameter href="#1" id="401" />
+                <Value id="402">SOIC127P600-8</Value>
+                <RealValue id="403">NaN</RealValue>
+              </TParameter>
+              <TParameter id="404">
+                <RequiredParameter href="#9" id="405" />
+                <Value id="406">http://www.national.com/packaging/folders/m08a.html</Value>
+                <RealValue id="407">NaN</RealValue>
+              </TParameter>
+              <TParameter id="408">
+                <RequiredParameter href="#16" id="409" />
+                <Value id="410">NSZXTT*LMC*568CM</Value>
+                <RealValue id="411">NaN</RealValue>
+              </TParameter>
+              <TParameter id="412">
+                <RequiredParameter href="#8" id="413" />
+                <Value id="414">M08A Package Page</Value>
+                <RealValue id="415">NaN</RealValue>
+              </TParameter>
+              <TParameter id="416">
+                <RequiredParameter href="#17" id="417" />
+                <Value id="418">revM, May-2009</Value>
+                <RealValue id="419">NaN</RealValue>
+              </TParameter>
+              <TParameter id="420">
+                <RequiredParameter href="#15" id="421" />
+                <Value id="422">M08A</Value>
+                <RealValue id="423">NaN</RealValue>
+              </TParameter>
+              <TParameter id="424">
+                <RequiredParameter href="#5" id="425" />
+                <Value id="426">http://www.national.com/ds/LM/LMC568.pdf</Value>
+                <RealValue id="427">NaN</RealValue>
+              </TParameter>
+              <TParameter id="428">
+                <RequiredParameter href="#21" id="429" />
+                <Value id="430">N</Value>
+                <RealValue id="431">NaN</RealValue>
+              </TParameter>
+              <TParameter id="432">
+                <RequiredParameter href="#18" id="433" />
+                <Value id="434">8</Value>
+                <RealValue id="435">NaN</RealValue>
+              </TParameter>
+              <TParameter id="436">
+                <RequiredParameter href="#2" id="437" />
+                <Value id="438">MS-012-AA</Value>
+                <RealValue id="439">NaN</RealValue>
+              </TParameter>
+              <TParameter id="440">
+                <RequiredParameter href="#14" id="441" />
+                <Value id="442">SOIC Narrow, 4.9 x 3.9 x 1.45mm, 8 Lead, 1.27mm Pitch</Value>
+                <RealValue id="443">NaN</RealValue>
+              </TParameter>
+              <TParameter id="444">
+                <RequiredParameter href="#7" id="445" />
+                <Value id="446">http://www.national.com/pf/LM/LMC568.html</Value>
+                <RealValue id="447">NaN</RealValue>
+              </TParameter>
+              <TParameter id="448">
+                <RequiredParameter href="#6" id="449" />
+                <Value id="450">LMC568 Web Page</Value>
+                <RealValue id="451">NaN</RealValue>
+              </TParameter>
+              <TParameter id="452">
+                <RequiredParameter href="#19" id="453" />
+                <Value id="454">N</Value>
+                <RealValue id="455">NaN</RealValue>
+              </TParameter>
+              <TParameter id="456">
+                <RequiredParameter href="#11" id="457" />
+                <Value id="458">May-1999</Value>
+                <RealValue id="459">NaN</RealValue>
+              </TParameter>
+              <TParameter id="460">
+                <RequiredParameter href="#4" id="461" />
+                <Value id="462">LMC568 Datasheet</Value>
+                <RealValue id="463">NaN</RealValue>
+              </TParameter>
+              <TParameter id="464">
+                <RequiredParameter href="#20" id="465" />
+                <Value id="466">Component URLs added</Value>
+                <RealValue id="467">NaN</RealValue>
+              </TParameter>
+              <TParameter id="468">
+                <RequiredParameter href="#13" id="469" />
+                <Value id="470">National Semiconductor</Value>
+                <RealValue id="471">NaN</RealValue>
+              </TParameter>
+              <TParameter id="472">
+                <RequiredParameter href="#10" id="473" />
+                <Value id="474">Analog IC</Value>
+                <RealValue id="475">NaN</RealValue>
+              </TParameter>
+            </Parameters>
+            <ModelChoices id="476">
+              <TModelChoice id="477">
+                <RequiredModel href="#25" id="478" />
+                <ModelLink href="#26" id="479" />
+              </TModelChoice>
+            </ModelChoices>
+            <ComponentTypes id="480" />
+            <ItemHRID id="481">CMP-0059-00001</ItemHRID>
+            <RevisionGUID id="482">7712C94C-F2E5-4F3A-963B-B351E112359B</RevisionGUID>
+            <RevisionId id="483">2</RevisionId>
+          </TComponentDefinition>
+        </ComponentDefinitions>
+        <Path id="484">Unified Components\Components\National Semiconductor\Communication</Path>
+        <IsDefaultGroup id="485">false</IsDefaultGroup>
+      </TGroup>
+    </Groups>
+    <ComponentDefinitions id="486" />
+    <IsDefaultGroup id="487">false</IsDefaultGroup>
+  </TopGroup>
+  <ShowReleaseState id="488">false</ShowReleaseState>
+  <ItemNamingSchemeMappings id="489">
+    <TItemNamingSchemeMapping id="490">
+      <SimpleNamingScheme id="491">CMP-{00000}</SimpleNamingScheme>
+      <InitialIndex id="492">0</InitialIndex>
+    </TItemNamingSchemeMapping>
+  </ItemNamingSchemeMappings>
+</TComponentSet>

@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Main>
+  <ExtensionServerOptions>
+    <Login />
+    <Password />
+    <ServiceURL />
+    <PublishToGlobalExtensionServer>false</PublishToGlobalExtensionServer>
+    <VaultGUID />
+  </ExtensionServerOptions>
+  <ExtensionOptions>
+    <ExtensionHRID>SupplyChainRelease</ExtensionHRID>
+    <ExtensionKind>ADServer</ExtensionKind>
+    <ExtensionSourceLocation>G:\Scripts\AD Extensions\SupplyChainRelease</ExtensionSourceLocation>
+    <ExtensionSourceRelativePath />
+    <ExtensionLanguage>C#</ExtensionLanguage>
+    <ExtensionIDEVersion>Visual Studio 2013</ExtensionIDEVersion>
+    <ExtemsionSDKVersion>3.1.1  (AD 17.0+)</ExtemsionSDKVersion>
+    <ExtensionCategoryGUID>793A1F67-0B22-4E01-A5DE-3176A1E8C60D</ExtensionCategoryGUID>
+    <ExtensionCategoryName>Extensions</ExtensionCategoryName>
+    <ExtensionLicensingMode>0</ExtensionLicensingMode>
+    <ExtensionIsPublished>false</ExtensionIsPublished>
+    <AltiumUpdate>false</AltiumUpdate>
+  </ExtensionOptions>
+  <ExtensionVersionOptions>
+    <ExtensionTitle>SupplyChainRelease</ExtensionTitle>
+    <ExtensionReadMe />
+    <ExtensionKeywords />
+    <ExtensionHelp />
+    <ExtensionRequirements />
+    <ExtensionSmallIcon />
+    <ExtensionLargeIcon />
+    <ExtensionShortDescription />
+    <ExtensionLongDescription />
+    <ExtensionVersion>1.0.0.1</ExtensionVersion>
+    <ExtensionLifeCycleGUID></ExtensionLifeCycleGUID>
+    <ExtensionTopLevelFolder>C:\ProgramData\Altium\Altium Designer Dev {E7D6F4C6-4588-4EDC-B1D5-E1AA6F14B839}\Extensions\SupplyChainRelease</ExtensionTopLevelFolder>
+    <ExtensionSDKTicket>C:\ProgramData\Altium\Altium Designer Dev {E7D6F4C6-4588-4EDC-B1D5-E1AA6F14B839}\Extensions\Altium Developer\SDK3.1\SDK.Ticket</ExtensionSDKTicket>
+    <ReleaseNote />
+    <ExtensionPublisherName>Altium Group</ExtensionPublisherName>
+  </ExtensionVersionOptions>
+</Main>

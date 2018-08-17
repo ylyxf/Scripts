@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{202AE9EE-335B-4246-9E5D-7090A7F57E75}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ciiva.Api.Dto</RootNamespace>
+    <AssemblyName>Ciiva.Api.Dto</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Ciiva.Api.Dto.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ServiceStack.Interfaces, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ApiDemo\Libraries\ServiceStack.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AuthenticationRequest.cs" />
+    <Compile Include="AuthenticationResponse.cs" />
+    <Compile Include="GetPartNumberSuggestion.cs" />
+    <Compile Include="ManufacturerComponentDetail.cs" />
+    <Compile Include="GetSubscriptionStatus.cs" />
+    <Compile Include="PartNumberSuggestion.cs" />
+    <Compile Include="StockItem.cs" />
+    <Compile Include="CurrentPrice.cs" />
+    <Compile Include="CurrentPriceBreak.cs" />
+    <Compile Include="HistoricalPrice.cs" />
+    <Compile Include="HistoricalPriceBreak.cs" />
+    <Compile Include="GetExchangeRates.cs" />
+    <Compile Include="GetStockForMultipleSupplierComponentsById.cs" />
+    <Compile Include="GetStockForSupplierComponentById.cs" />
+    <Compile Include="GetPricingForMultipleSupplierComponentsById.cs" />
+    <Compile Include="GetPricingForSupplierComponentById.cs" />
+    <Compile Include="GetSupplierComponentById.cs" />
+    <Compile Include="GetSupplierComponentsByManufacturerComponentId.cs" />
+    <Compile Include="GetSupplierComponentsByPartNumber.cs" />
+    <Compile Include="GetAlternativeManufacturerComponentsById.cs" />
+    <Compile Include="GetManufacturerComponentById.cs" />
+    <Compile Include="GetManufacturerComponentsByPartNumber.cs" />
+    <Compile Include="ExchangeRateItem.cs" />
+    <Compile Include="Stock.cs" />
+    <Compile Include="ManufacturerComponent.cs" />
+    <Compile Include="SubscriptionStatus.cs" />
+    <Compile Include="SupplierComponent.cs" />
+    <Compile Include="GetManufacturerComponentsByDescriptiveSearch.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TechnicalDetail.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

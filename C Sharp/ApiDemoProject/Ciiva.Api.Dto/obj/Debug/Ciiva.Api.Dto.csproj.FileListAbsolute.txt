@@ -1,0 +1,6 @@
+G:\TestArea\ApiDemoProject\Ciiva.Api.Dto\bin\Debug\Ciiva.Api.Dto.xml
+G:\TestArea\ApiDemoProject\Ciiva.Api.Dto\bin\Debug\Ciiva.Api.Dto.dll
+G:\TestArea\ApiDemoProject\Ciiva.Api.Dto\bin\Debug\Ciiva.Api.Dto.pdb
+G:\TestArea\ApiDemoProject\Ciiva.Api.Dto\obj\Debug\Ciiva.Api.Dto.dll
+G:\TestArea\ApiDemoProject\Ciiva.Api.Dto\obj\Debug\Ciiva.Api.Dto.pdb
+G:\TestArea\ApiDemoProject\Ciiva.Api.Dto\bin\Debug\ServiceStack.Interfaces.dll

@@ -1,0 +1,24 @@
+G:\Scripts\C Sharp\Altium Vault Tools Console\bin\Debug\DxpServerSDK.dll
+G:\Scripts\C Sharp\Altium Vault Tools Console\bin\Debug\DxpServerSDK.Contracts.dll
+G:\Scripts\C Sharp\Altium Vault Tools Console\bin\Debug\CredentialManagement.dll
+G:\Scripts\C Sharp\Altium Vault Tools Console\bin\Debug\Microsoft.Practices.Unity.dll
+G:\Scripts\C Sharp\Altium Vault Tools Console\bin\Debug\Ionic.Zip.Reduced.dll
+G:\Scripts\C Sharp\Altium Vault Tools Console\bin\Debug\INIFileParser.dll
+G:\Scripts\C Sharp\Altium Vault Tools Console\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+G:\Scripts\C Sharp\Altium Vault Tools Console\bin\Debug\Python Scripts\cmpLib_advanced_ipy.py
+G:\Scripts\C Sharp\Altium Vault Tools Console\bin\Debug\Python Scripts\cmpLib_ipy.py
+G:\Scripts\C Sharp\Altium Vault Tools Console\bin\Debug\Iron Python Scripts Executor.exe.config
+G:\Scripts\C Sharp\Altium Vault Tools Console\bin\Debug\Iron Python Scripts Executor.exe
+G:\Scripts\C Sharp\Altium Vault Tools Console\bin\Debug\Iron Python Scripts Executor.pdb
+G:\Scripts\C Sharp\Altium Vault Tools Console\obj\Debug\Iron Python Scripts Executor.exe
+G:\Scripts\C Sharp\Altium Vault Tools Console\obj\Debug\Iron Python Scripts Executor.pdb
+G:\Scripts\C Sharp\Altium Vault Tools Console\bin\Debug\Python Scripts\Template.xml
+G:\Scripts\C Sharp\Altium Vault Tools Console\bin\Debug\IronPython.dll
+G:\Scripts\C Sharp\Altium Vault Tools Console\bin\Debug\IronPython.Modules.dll
+G:\Scripts\C Sharp\Altium Vault Tools Console\bin\Debug\IronPython.xml
+G:\Scripts\C Sharp\Altium Vault Tools Console\bin\Debug\IronPython.Modules.xml
+G:\Scripts\C Sharp\Altium Vault Tools Console\bin\Debug\Iron Python Scripts Executor.exe.manifest
+G:\Scripts\C Sharp\Altium Vault Tools Console\bin\Debug\Iron Python Scripts Executor.application
+G:\Scripts\C Sharp\Altium Vault Tools Console\obj\Debug\Altium Vault Tools Console.csprojResolveAssemblyReference.cache
+G:\Scripts\C Sharp\Altium Vault Tools Console\obj\Debug\Iron Python Scripts Executor.exe.manifest
+G:\Scripts\C Sharp\Altium Vault Tools Console\obj\Debug\Iron Python Scripts Executor.application

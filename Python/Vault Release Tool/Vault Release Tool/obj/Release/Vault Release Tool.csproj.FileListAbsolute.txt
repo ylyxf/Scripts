@@ -1,0 +1,34 @@
+G:\Scripts\Python\Vault Release Tool\Vault Release Tool\bin\Release\Vault Release Tool.exe.config
+G:\Scripts\Python\Vault Release Tool\Vault Release Tool\bin\Release\buildCmpLib.py
+G:\Scripts\Python\Vault Release Tool\Vault Release Tool\bin\Release\cmpLib_ipy.py
+G:\Scripts\Python\Vault Release Tool\Vault Release Tool\bin\Release\Vault Release Tool.exe
+G:\Scripts\Python\Vault Release Tool\Vault Release Tool\bin\Release\Vault Release Tool.pdb
+G:\Scripts\Python\Vault Release Tool\Vault Release Tool\bin\Release\DxpServerSDK.dll
+G:\Scripts\Python\Vault Release Tool\Vault Release Tool\bin\Release\INIFileParser.dll
+G:\Scripts\Python\Vault Release Tool\Vault Release Tool\bin\Release\DxpServerSDK.Contracts.dll
+G:\Scripts\Python\Vault Release Tool\Vault Release Tool\bin\Release\CredentialManagement.dll
+G:\Scripts\Python\Vault Release Tool\Vault Release Tool\bin\Release\Microsoft.Practices.Unity.dll
+G:\Scripts\Python\Vault Release Tool\Vault Release Tool\bin\Release\Ionic.Zip.Reduced.dll
+G:\Scripts\Python\Vault Release Tool\Vault Release Tool\bin\Release\Microsoft.Practices.ServiceLocation.dll
+G:\Scripts\Python\Vault Release Tool\Vault Release Tool\obj\Release\Vault_Release_Tool.Add_Vault.resources
+G:\Scripts\Python\Vault Release Tool\Vault Release Tool\obj\Release\Vault_Release_Tool.mainForm.resources
+G:\Scripts\Python\Vault Release Tool\Vault Release Tool\obj\Release\Vault_Release_Tool.Properties.Resources.resources
+G:\Scripts\Python\Vault Release Tool\Vault Release Tool\obj\Release\Vault Release Tool.csproj.GenerateResource.Cache
+G:\Scripts\Python\Vault Release Tool\Vault Release Tool\obj\Release\Vault Release Tool.exe
+G:\Scripts\Python\Vault Release Tool\Vault Release Tool\obj\Release\Vault Release Tool.pdb
+G:\Scripts\Python\Vault Release Tool\Vault Release Tool\bin\Release\Config.ini
+G:\Scripts\Python\Vault Release Tool\Vault Release Tool\bin\Release\Template.xml
+G:\Scripts\Python\Vault Release Tool\Vault Release Tool\obj\Release\Vault Release Tool.csprojResolveAssemblyReference.cache
+G:\Scripts\Python\Vault Release Tool\Vault Release Tool\bin\Release\Vault Release Tool.exe.manifest
+G:\Scripts\Python\Vault Release Tool\Vault Release Tool\bin\Release\Vault Release Tool.application
+G:\Scripts\Python\Vault Release Tool\Vault Release Tool\obj\Release\Vault Release Tool.exe.manifest
+G:\Scripts\Python\Vault Release Tool\Vault Release Tool\obj\Release\Vault Release Tool.application
+G:\Scripts\Python\Vault Release Tool\Vault Release Tool\bin\Release\System.dll
+G:\Scripts\Python\Vault Release Tool\Vault Release Tool\bin\Release\IronPython.dll
+G:\Scripts\Python\Vault Release Tool\Vault Release Tool\bin\Release\Microsoft.Scripting.dll
+G:\Scripts\Python\Vault Release Tool\Vault Release Tool\bin\Release\IronPython.xml
+G:\Scripts\Python\Vault Release Tool\Vault Release Tool\bin\Release\Microsoft.Scripting.xml
+G:\Scripts\Python\Vault Release Tool\Vault Release Tool\bin\Release\Microsoft.Dynamic.dll
+G:\Scripts\Python\Vault Release Tool\Vault Release Tool\bin\Release\Microsoft.Dynamic.xml
+G:\Scripts\Python\Vault Release Tool\Vault Release Tool\bin\Release\IronPython.Modules.dll
+G:\Scripts\Python\Vault Release Tool\Vault Release Tool\bin\Release\IronPython.Modules.xml
