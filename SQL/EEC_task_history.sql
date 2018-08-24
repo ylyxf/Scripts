@@ -10,8 +10,11 @@ from task_status_history__cts__verified_component as "verified"
 where ((verified.ts AT TIME ZONE 'UTC') BETWEEN CURRENT_TIMESTAMP - INTERVAL '170 DAY' AND CURRENT_TIMESTAMP) ;
 
 
-select verified.component_id, verified.ts from (
-select *, (row_number() over(partition by task_id order by ts)) Row_Num from task_status_history__cts__verified_component
+select verified.component_id, verified.ts, verified.task_id from 
+(
+	select *, (row_number() over(partition by task_id order by ts)) 
+	Row_Num 
+	from task_status_history__cts__verified_component
 ) verified
 where verified.Row_Num=1
 and (verified.ts at time zone 'UTC') > '2017-04-01' 
@@ -49,3 +52,23 @@ inner join
 
 on t.component_id = e.component_id
 group by e.component_id;
+
+
+select * from task_statuses__assigned where task_id='0009e3f5dec75d4b'
+select * from task_statuses__skipped where task_id='361fd7e4a135531a'
+
+
+select s.task_id, count(s.username) from task_statuses__cts__rejected_verified s
+inner join 
+(
+	select verified.component_id, verified.ts, verified.task_id from 
+		(
+			select *, (row_number() over(partition by task_id order by ts)) Row_Num 
+			from task_status_history__cts__verified_component
+		) verified
+	where verified.Row_Num=1
+	and (verified.ts at time zone 'UTC') > '2017-04-01' 
+	order by verified.ts
+) t
+on s.task_id = t.task_id
+group by s.task_id;

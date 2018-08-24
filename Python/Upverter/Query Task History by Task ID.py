@@ -1,7 +1,6 @@
 __author__ = 'frank.qiu'
 
-import urllib
-import urllib2
+import urllib, urllib2
 import requests
 import cookielib
 import re
@@ -9,6 +8,8 @@ import xml.etree.ElementTree as ET
 import datetime
 import ssl
 import json
+import pandas as pd
+import sys
 	
 def upverterLogin(userName, password, site='mainSite'):
 	loginPageUrl = 'https://upverter.com/login/'
@@ -62,6 +63,7 @@ def searchUpverterForum(content, opener=None):
 
 def parseHistory(taskHistoryPage):
     rawHistory = re.search(r'<tbody>((?:.|\n)*?)</tbody>',taskHistoryPage).group(0)
+	print rawHistory
 
     eleHistory = ET.fromstring(rawHistory)
 
@@ -141,10 +143,52 @@ def fetchPartClass(componentId):
 		return None
 	
 
-def getTasksInfo(taskIDs):
-	
-	
-	
+def getTasksInfo():
+	result = r'materials.csv'
+	data = pd.read_csv(r'task_history__component_id.csv', index_col='task_id',
+						parse_dates=['ts'])
+						
+	counts = {
+			  'assigned' : pd.read_csv(r'task_history__assigned.csv', index_col='task_id'),
+			  'rejected' : pd.read_csv(r'task_history__rejected.csv', index_col='task_id'),
+			  'skipped' : pd.read_csv(r'task_history__skipped.csv', index_col='task_id')
+			  }
+			  
+	for d in counts.keys():
+		data = data.join(counts[d], rsuffix='_'+d, how='left')
+	data.rename({'count':'count_assigned'}, axis=1, inplace=True)
+	data.drop(data[pd.isna(data.count_assigned)].index, inplace=True)
+
+	factors = {
+				'complexity': pd.read_csv('task_history__complexity_factors.csv'),
+				'footprints': pd.read_csv(r'task_history__footprint_primitives.csv'),
+				'manufacturers': pd.read_csv(r'task_history__manufacturers.csv')
+			   }
+	for d in factors.keys():
+		data = data.join(factors[d].set_index('component_id'),
+						on='component_id', how='inner')
+	data.rename({'sum':'primitives'}, axis=1, inplace=True)
+	data.drop('factors__component_id', axis=1, inplace=True)
+		
+	requester = upverterLogin('frank.qiu', '123456',site='forum')
+	data['MPN'] = pd.np.NaN
+	data['posts'] = pd.np.NaN
+	data['class_L2'] = pd.np.NaN
+
+	for task_id,i in zip(data.index, xrange(len(data))):
+		sys.stdout.write('%s / %s\r' %(str(i+1), str(len(data))))
+
+		cmp_id = data['component_id'].loc[task_id]
+		try:
+			data.MPN, data.posts = fetchMPNbyTaskId(task_id, requester) 
+			data.class_L2 = fetchPartClass(cmp_id)
+			
+		except:
+			data.to_csv(result)
+			print '\r\n' + task_id + ' is with something  wrong'
+			
+	data.to_csv(result)
+
 def main():
 	taskIDList = ['02a7d26767e79a7b',
 	'03133fbe0622831c',
