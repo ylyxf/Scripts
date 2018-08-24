@@ -2,42 +2,63 @@ __author__ = 'frank.qiu'
 
 import urllib
 import urllib2
+import requests
 import cookielib
 import re
 import xml.etree.ElementTree as ET
 import datetime
-
-
-def upverterLogin(userName, password):
-    loginUrl = "https://upverter.com/login/"
-
-    cookie = cookielib.CookieJar()
+import ssl
+import json
+	
+def upverterLogin(userName, password, site='mainSite'):
+	loginPageUrl = 'https://upverter.com/login/'
+	enteranceUrl = {'mainSite': "https://upverter.com/login/",
+				'forum': 'https://forum.upverter.com/session/sso?return_path=%2F'
+				}.get(site)
+				
+	if enteranceUrl == None:
+		raise KeyError
+	
+	cookie = cookielib.CookieJar()
     handler = urllib2.HTTPCookieProcessor(cookie)
     opener = urllib2.build_opener(handler)
-
-    #get CSRF token from login page
-    loginPage = opener.open(loginUrl)
-    csrfToken = re.search(r'<meta content="(.+)" name=',loginPage.read()).group(1)
-
-    #no use so far
-    loginHeader = {"Origin":"https://upverter.com",
-                   "Upgrade-Insecure-Requests":"1",
-                   "Content-Type":"application/x-www-form-urlencoded",
-                   "User-Agent":"Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36",
-                   "Accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8",
-                   "Referer":loginUrl,
-                   "Accept-Encoding":"gzip, deflate, br",
-                   "Accept-Language":"-US,en;q=0.9,ja;q=0.8,zh-CN;q=0.7,zh;q=0.6,zh-TW;q=0.5,ko;q=0.4"}
-
-    postData = urllib.urlencode({'_csrf_token':csrfToken,
+	
+	loginPage = opener.open(loginPageUrl)
+	csrfToken = re.search(r'<meta content="(.+)" name=',loginPage.read()).group(1)
+	postData = urllib.urlencode({'_csrf_token':csrfToken,
                                  'login_username':userName,
                                  'login_password':password,
                                  'type':'upverter',
-                                 'next':'2F'})
-
-    loginResult = opener.open(loginUrl, postData)
-
-    return opener
+                                 'next':'%2F'})
+								 	
+	if site == 'forum':
+		enteranceUrl = opener.open(enteranceUrl).geturl()
+		
+	req = urllib2.Request(enteranceUrl, postData)
+	connLogin = opener.open(req)
+		
+	
+	return opener
+	
+	
+def searchUpverterForum(content, opener=None):
+	searchUrl = 'http://forum.upverter.com/search?'
+	searchUrl += urllib.urlencode({'q' : content})
+	
+	header = {
+				'Accept': 'application/json, text/javascript, */*; q=0.01',
+				'X-Requested-With':	'XMLHttpRequest'
+			}
+	req = urllib2.Request(searchUrl, headers=header)
+	
+	if opener == None:
+		resp = urllib2.urlopen(req)
+	else:
+		resp = opener.open(req)
+		
+	return resp
+	
+	
 
 def parseHistory(taskHistoryPage):
     rawHistory = re.search(r'<tbody>((?:.|\n)*?)</tbody>',taskHistoryPage).group(0)
@@ -80,545 +101,104 @@ def parseHistory(taskHistoryPage):
     return validHistoryDict
 
 
-taskIDList = ['02a7d26767e79a7b',
-'03133fbe0622831c',
-'03aab80b99f6032f',
-'08ba9280d8abb27e',
-'0a304ab90583b0da',
-'0ca2636caea303f3',
-'122b8aced7b2244d',
-'134c2c676842f82e',
-'160dc796f1d7ffb4',
-'1e90ed6f89d07134',
-'2320489c31ca1200',
-'23f315f50d8a93a7',
-'29cf8cc58afcf89a',
-'31d734175d8825a8',
-'407d57b9a5ed914a',
-'485b32bdfa983a06',
-'4b40daa1dd146922',
-'4de65bceb577d0bb',
-'5534005e43e5f21e',
-'553aabdfc8fc1cc1',
-'586346c697c2dbc5',
-'63d4fc7ce29bc11e',
-'6d21fd55281ed639',
-'703d29214a5a8edc',
-'74a1f3a0dcbae775',
-'7691d8ad9fb3973f',
-'783c1079d54cf6f7',
-'7c07f6dbb1d9d65d',
-'7d97f0c58bae3b42',
-'7e51afb6b3e61a8b',
-'81be75ca7770ecdd',
-'8a98e63e5da5b355',
-'8ef6f63e9f0c8123',
-'9142ee848f463c42',
-'9b286667a1d9ad13',
-'9f809f3a78cc9718',
-'a3828c25bcdf21bf',
-'a9d685231d985d35',
-'add37de82a29d53e',
-'b65dcd24b17fb477',
-'c3fc30ce1c228c67',
-'c9e36a5fbaba786f',
-'cc70ce0dc70ae14a',
-'cd51cfb2f25c246b',
-'cdcf7183a1b4de43',
-'cf2889980c7189a3',
-'d3dde5e99fbed8b9',
-'e4d08bd608e94065',
-'e53a726174a5dacb',
-'e5ba53c52afd42d2',
-'e92e08a2bb984a78',
-'edad28ebe4c97582',
-'eeaae8d503f41e5d',
-'f076a7d4fa961388',
-'f54664250a1f35d6',
-'fedee0eaf3a088fb',
-'070ceb4af4e32173',
-'181b38a2476702b1',
-'1a212bf244644432',
-'1d87a8d5e27ccf4c',
-'2da15ea1088dc6e1',
-'47373ec691f58639',
-'6a7731fe07396096',
-'84099bc9b961029c',
-'b808dc8c10930be0',
-'c670b8b7ee27fa09',
-'c6ce7e2fb00ae21c',
-'cdfe51f29a7cb12f',
-'eccf911a1d0bbdc0',
-'f4af482943d489ce',
-'fa483c1d6fc22ab7',
-'feceda9ae4504e3e',
-'02a7d26767e79a7b',
-'02faa8d9387e21df',
-'037d269d745a975f',
-'090a8d7e682847c6',
-'0b01e5cbc35dae6c',
-'0ca2636caea303f3',
-'132ec1e17de81c3f',
-'2320489c31ca1200',
-'31f11f26da438d76',
-'3ab2ab1ef03791a6',
-'454512d717ca1d86',
-'474294683519703d',
-'4e7b23a9719e605e',
-'4fcffcf4136cd63d',
-'5534005e43e5f21e',
-'553bfd751d2e92d0',
-'5782351f04331ed5',
-'5c2951721e042809',
-'5f8171d087ba2efa',
-'62445e9def24ad84',
-'66d3d9cbeda1f4ae',
-'6cedae43522506e2',
-'730f7f4b3f3b1ba3',
-'7a886db24c18e07f',
-'7d4903218690d725',
-'7e51afb6b3e61a8b',
-'830d90e03d3482ce',
-'8b7359f25170abc6',
-'93374148d9c7ec86',
-'980506565da0021c',
-'9a2741db58abe51f',
-'9ad9024611214342',
-'9bbbd05a9d6efe13',
-'9cb0688e72f87444',
-'a47a94410a4cf953',
-'aa0258ba5ca82646',
-'aa48f092bcb7c934',
-'aa7bd05d75278766',
-'abbc9a59c4cff1dc',
-'b7f3b49fceb34e94',
-'bff33de8d469ed0a',
-'c670b8b7ee27fa09',
-'cc547284d9988868',
-'e8a814c8edbe990a',
-'f53f4b6e47341e86',
-'f628f76a18532fea',
-'f9a05d8cd1486695',
-'ff9bc6bdb61eb5a5',
-'02faa8d9387e21df',
-'0c1bfa671589490d',
-'18896ce4edc6c235',
-'1c573c3e1eb3475a',
-'1d03022f18c85e56',
-'2659ac7ac4d9069d',
-'340781df50bc5f14',
-'3ae45b977d47bd53',
-'454512d717ca1d86',
-'495f207f105993f2',
-'519232fb325dafd0',
-'580dbf81d6b22892',
-'5e2b2f6e45f7ce88',
-'5e4af886f1c17f33',
-'5f8171d087ba2efa',
-'6bc3aec91c47fa11',
-'7906c0361267c719',
-'7a8dec083af32537',
-'8231d5a7b3b2e067',
-'84099bc9b961029c',
-'8ef6f63e9f0c8123',
-'93374148d9c7ec86',
-'98044eba928b922e',
-'99b456ad6b46c96f',
-'9a7808b5b8b06dda',
-'a759d391881445df',
-'af77c4946b2ae9ee',
-'b288a67a227319f9',
-'b474ff7a4e18604d',
-'ba22bdc697ccf360',
-'ce97d094a0494b62',
-'cf2889980c7189a3',
-'d050aa4c62dcbf31',
-'d815b9644ff5e982',
-'e2bebc6d92b8175f',
-'e4071c6ed116f7e2',
-'ed0592548a5fd305',
-'eeaae8d503f41e5d',
-'f40846f6d0635294',
-'f5e881e8debc8e44',
-'fedee0eaf3a088fb',
-'132ec1e17de81c3f',
-'1a67819a245e1269',
-'1c573c3e1eb3475a',
-'1ce20ea7e47df0b9',
-'1e160a18bda7b844',
-'1e90ed6f89d07134',
-'2659ac7ac4d9069d',
-'2da15ea1088dc6e1',
-'3ced7007d8420d7e',
-'485b32bdfa983a06',
-'48df4418640f1de3',
-'4c8269a333307b9b',
-'4fac1349a9f9b4d4',
-'5534005e43e5f21e',
-'5fb7fce3c5d71b53',
-'657353880204ec53',
-'6a7731fe07396096',
-'760e69e5d662a985',
-'7c07f6dbb1d9d65d',
-'7d97f0c58bae3b42',
-'899e5b93443faf2a',
-'92f0c2585b5c46cd',
-'9306cbcb9136052d',
-'9a2741db58abe51f',
-'a670085c6a19933d',
-'aa0258ba5ca82646',
-'aa48f092bcb7c934',
-'b91e52a8463ddcf3',
-'ba36f76cc667add7',
-'bdfe0916d89a047f',
-'cd51cfb2f25c246b',
-'cdfe51f29a7cb12f',
-'ce97d094a0494b62',
-'cf2889980c7189a3',
-'d4527cf949dfe966',
-'d815b9644ff5e982',
-'dac622545eae4d7d',
-'de5b9e2f848d7798',
-'e4dece5af1e945e1',
-'edad28ebe4c97582',
-'f40846f6d0635294',
-'f54664250a1f35d6',
-'f9a05d8cd1486695',
-'05ac1e59af28a360',
-'0d0a6c30de01fa8e',
-'0fb063f548e9e9bc',
-'1c573c3e1eb3475a',
-'1caee898a6420428',
-'22c3bf3eb18688a6',
-'259a0522c99fc81b',
-'2654a60abe6b0877',
-'3573459f4844f497',
-'37e3ce498e228897',
-'3ab2ab1ef03791a6',
-'3ced7007d8420d7e',
-'4fac1349a9f9b4d4',
-'521457c56c51eea8',
-'5f9fe94ddbe2fdd4',
-'6186b98d66cc626e',
-'6f25c3c3b8f117d4',
-'7126553c25a085e6',
-'74745a17f9778578',
-'7906c0361267c719',
-'893c2ed224cad168',
-'8b49ec55cac33e74',
-'8c7971ca42bd35d5',
-'8ef6f63e9f0c8123',
-'90ffda8feecd5f03',
-'93c3f048a116c24f',
-'9bbbd05a9d6efe13',
-'a4bee5c82e538272',
-'adf87c79370c6508',
-'ba22bdc697ccf360',
-'ba36f76cc667add7',
-'bb40dada0e1fbb96',
-'c78a7916eaf8a542',
-'dee730ae56a636ae',
-'e07b717ddd401761',
-'e747dd11ab99d823',
-'e8a814c8edbe990a',
-'eccf911a1d0bbdc0',
-'f0fc95af658b8067',
-'f2e28a0a07b2797c',
-'f4a3165b87dede18',
-'f54664250a1f35d6',
-'fdf6e58a7c63b0f3',
-'045c5d8db591e965',
-'0874caeadd445b41',
-'0c1bfa671589490d',
-'13514718fc5ffd25',
-'160dc796f1d7ffb4',
-'1a67819a245e1269',
-'1d03022f18c85e56',
-'27568c9df1054493',
-'31a1ad00909d62f7',
-'3573459f4844f497',
-'3ae846046a0cf9f8',
-'474294683519703d',
-'5091178c5deeaec1',
-'5a5fca947a7406f6',
-'5af01ab6c9c2b07f',
-'5c2951721e042809',
-'6186b98d66cc626e',
-'622b860e065b6c6c',
-'7d4903218690d725',
-'7d759352c1bfee71',
-'7e56ef2afc21db6d',
-'93e19340d7001d95',
-'a5f27463449b5eb4',
-'a7a0a2d8d74acb22',
-'aa7bd05d75278766',
-'b65d45a5e24ebb4c',
-'ba22bdc697ccf360',
-'bc4ddc82c28a4cbd',
-'bdfcff1ae5323a94',
-'c6ce7e2fb00ae21c',
-'c7074c122327be11',
-'c78a7916eaf8a542',
-'e73dfb3f98ba2692',
-'f2e28a0a07b2797c',
-'f47f88b47a015aff',
-'f4a3165b87dede18',
-'f5e881e8debc8e44',
-'f6bc64ee4dde1909',
-'f8f0d489db9ac9cf',
-'fa1e14173f8a92b3',
-'0240826db5ff26d6',
-'054151b1d3192f85',
-'15ce85b997e351f9',
-'18c92923e5368373',
-'1e404adc3bc3823c',
-'1e4280bb2a8b81fa',
-'1ea33f68bbdc5624',
-'27568c9df1054493',
-'2abd896e7c7bcf68',
-'2da15ea1088dc6e1',
-'34e8ccabf10f8889',
-'3752716e5ce9001c',
-'37fcfc46e636596e',
-'445465271dfa9ac5',
-'485b32bdfa983a06',
-'48df4418640f1de3',
-'4cd7446108654431',
-'558942be176efdf8',
-'586346c697c2dbc5',
-'5fb7fce3c5d71b53',
-'66d3d9cbeda1f4ae',
-'736a2233aef35d86',
-'74a1f3a0dcbae775',
-'755a2ad04be2055c',
-'7a886db24c18e07f',
-'7a8dec083af32537',
-'7d25769c85006134',
-'7eadc9d055349cc3',
-'830d90e03d3482ce',
-'83967bc6f1db49ea',
-'8433f28a36cfa244',
-'9204585ac5e0b265',
-'929a916fa7816ad9',
-'9acb577323854e1b',
-'9bbbd05a9d6efe13',
-'9cb0688e72f87444',
-'a5bbddadb457897f',
-'a73e4c9c92a0d9f0',
-'aa48f092bcb7c934',
-'b645894a4a66511c',
-'bb40dada0e1fbb96',
-'bdfe0916d89a047f',
-'cc70ce0dc70ae14a',
-'d0842a4dfe30e864',
-'d1d276bbbd55f67a',
-'d33f114f7fc19abb',
-'de5b9e2f848d7798',
-'e2bebc6d92b8175f',
-'e84f5620bcfda936',
-'e92e08a2bb984a78',
-'eccf911a1d0bbdc0',
-'f31c80f476633db7',
-'f53f4b6e47341e86',
-'0a304ab90583b0da',
-'13514718fc5ffd25',
-'181b38a2476702b1',
-'19ca9e6702b8cdda',
-'1caee898a6420428',
-'1ce20ea7e47df0b9',
-'1e404adc3bc3823c',
-'2588dbd1bf372a28',
-'3dfc3c26b15230e7',
-'407d57b9a5ed914a',
-'43ac911b6382a35e',
-'47373ec691f58639',
-'4b40daa1dd146922',
-'519232fb325dafd0',
-'553aabdfc8fc1cc1',
-'5e2b2f6e45f7ce88',
-'6f17123f0c55ddd3',
-'6f25c3c3b8f117d4',
-'703d29214a5a8edc',
-'7d97f0c58bae3b42',
-'83967bc6f1db49ea',
-'84099bc9b961029c',
-'899e5b93443faf2a',
-'8a98e63e5da5b355',
-'90ffda8feecd5f03',
-'93374148d9c7ec86',
-'93c3f048a116c24f',
-'a3e5eec67affc6da',
-'a59cb24874d2dfd4',
-'af77c4946b2ae9ee',
-'ba22bdc697ccf360',
-'ba30131f819a5c13',
-'bc4ddc82c28a4cbd',
-'c3fc30ce1c228c67',
-'c4f919226ddffe89',
-'c652b5813cf8c581',
-'d050aa4c62dcbf31',
-'d384cca433be78a9',
-'d522346608c98015',
-'e2bebc6d92b8175f',
-'e6b971d4dc9b64ad',
-'e747dd11ab99d823',
-'e79001b16c42c4e5',
-'e84f5620bcfda936',
-'ebefeb43b8abf6f6',
-'eccf911a1d0bbdc0',
-'fdf6e58a7c63b0f3',
-'feceda9ae4504e3e',
-'011177891f2fe5cc',
-'0240826db5ff26d6',
-'02a7d26767e79a7b',
-'05c0c37732fb68b7',
-'0a304ab90583b0da',
-'0b01e5cbc35dae6c',
-'0e6287c736e6d66d',
-'0f236d132d56cc0b',
-'11aba8e8fff9f132',
-'122b8aced7b2244d',
-'18c92923e5368373',
-'24b3dde4588a7418',
-'2588dbd1bf372a28',
-'2614204a3b2c26ec',
-'31d734175d8825a8',
-'34e8ccabf10f8889',
-'3ced7007d8420d7e',
-'48df4418640f1de3',
-'4cd7446108654431',
-'513c2d1eb9525262',
-'5af01ab6c9c2b07f',
-'5cf12a8088e7339c',
-'74a1f3a0dcbae775',
-'75013fa338959bf2',
-'7762e7a8d807bac6',
-'790b004f39548e6b',
-'7b0b69c896c4a5f9',
-'81be75ca7770ecdd',
-'899e5b93443faf2a',
-'8d94a63c3973ffa4',
-'8e01fec2d98fcaf2',
-'8e56dfb52dfae54d',
-'9142ee848f463c42',
-'929a916fa7816ad9',
-'980506565da0021c',
-'9a1e020a29f6be4c',
-'9f809f3a78cc9718',
-'b474ff7a4e18604d',
-'b65dcd24b17fb477',
-'c652b5813cf8c581',
-'d384cca433be78a9',
-'d3dde5e99fbed8b9',
-'d4527cf949dfe966',
-'dcee739c5813819b',
-'dee730ae56a636ae',
-'e07b717ddd401761',
-'e4dece5af1e945e1',
-'e79a8fcac1e48014',
-'eeafba828dd2cdcc',
-'f2075c6ad2566775',
-'f2bd7179ab0c73fe',
-'f53f4b6e47341e86',
-'012177a4fd7804ba',
-'03133fbe0622831c',
-'052b318bd21f9baa',
-'0874caeadd445b41',
-'0f236d132d56cc0b',
-'13514718fc5ffd25',
-'13b902e022a825d9',
-'15ce85b997e351f9',
-'181b38a2476702b1',
-'18896ce4edc6c235',
-'1caee898a6420428',
-'22c3bf3eb18688a6',
-'2320489c31ca1200',
-'2654a60abe6b0877',
-'2659ac7ac4d9069d',
-'30eebb8c6cc75d68',
-'31d734175d8825a8',
-'3ce60a792f3e6a36',
-'407d57b9a5ed914a',
-'428c902ddecfba48',
-'495f207f105993f2',
-'4de65bceb577d0bb',
-'506f9b3e7040ac33',
-'513c2d1eb9525262',
-'519232fb325dafd0',
-'553bfd751d2e92d0',
-'58136cb96a1e64f6',
-'5f9fe94ddbe2fdd4',
-'63d4fc7ce29bc11e',
-'6bc3aec91c47fa11',
-'6f17123f0c55ddd3',
-'7762e7a8d807bac6',
-'7906c0361267c719',
-'7fd539f00bcd472f',
-'88949d10c3d4da77',
-'926618eaeb9379d1',
-'9a2741db58abe51f',
-'9ad9024611214342',
-'9dd1c8ffcb8f7712',
-'a5bf33441da8dbf8',
-'a73e4c9c92a0d9f0',
-'b645894a4a66511c',
-'b8814c027fd93b53',
-'b91e52a8463ddcf3',
-'c58c0ca1673b1838',
-'d815b9644ff5e982',
-'df29ab825803cef0',
-'e54f5e58472cc80c',
-'e5ba53c52afd42d2',
-'e6b971d4dc9b64ad',
-'f2bd7179ab0c73fe',
-'f8f0d489db9ac9cf']
+def fetchTaskHistory(taskId, opener):
+	histUrl = "https://upverter.com/task/%s/debug/" %(taskId)
 
-#remove duplicated task id
-TaskIdDict = {}
-for taskID in taskIDList:
-    TaskIdDict[taskID] = taskID
-taskIDList = TaskIdDict.keys()
+	try:
+		resp = opener.open(histUrl)
+		history = parseHistory(resp.read())
+		
+		return history
+		
+	except urllib2.HTTPError:
+		return None
+	
+	
+def fetchMPNbyTaskId(taskId, opener):
+	resp = searchUpverterForum(taskId, opener)
+	data = json.loads(resp.read())
+	
+	if data.get('topics'):
+		mpn = data['topics'][0].get('title').split(' -- ')[0]
+		posts = data['topics'][0]['posts_count']
+	
+		return (mpn, posts)
+		
+	else:	
+		return None
+		
+def fetchPartClass(componentId):
+	partUrl = 'https://upverter.com/upn/revision/' + componentId
+	pattern = r'<div class="col"><div> Device Class L2</div></div>\s+<div class="col"><div>(.+)</div></div>'
+   
+	try:
+		data = urllib2.urlopen(partUrl).read()
+		classL2 = re.search(pattern, data).group(1)
+		
+		return classL2
+		
+	except:
+		return None
+	
+
+def getTasksInfo(taskIDs):
+	
+	
+	
+def main():
+	taskIDList = ['02a7d26767e79a7b',
+	'03133fbe0622831c',
+	]
+
+	#remove duplicated task id
+	TaskIdDict = {}
+	for taskID in taskIDList:
+		TaskIdDict[taskID] = taskID
+	taskIDList = TaskIdDict.keys()
 
 
-print "login in Upverter"
-requester = upverterLogin("frank.qiu","123456")
+	print "login in Upverter"
+	requester = upverterLogin("frank.qiu","123456")
 
-print "taskID", "user", "duration", "taskTimeAeverage", "taskTimeMin", "start"
+	print "taskID", "user", "duration", "taskTimeAeverage", "taskTimeMin", "start"
 
-taskReport = open("report.txt", "wb")
-for taskID in taskIDList:
-    response = requester.open("https://upverter.com/task/" + taskID + "/debug/")
-    taskHistoryPage = response.read()
+	taskReport = open("report.txt", "wb")
+	for taskID in taskIDList:
+		response = requester.open("https://upverter.com/task/" + taskID + "/debug/")
+		taskHistoryPage = response.read()
 
-    userHistory = parseHistory(taskHistoryPage)
+		userHistory = parseHistory(taskHistoryPage)
 
-    taskTimeAeverage = 0
-    taskTimeMin = 9999
-    taskTimeTotal = 0
-    for user in userHistory:
-        if not userHistory[user].has_key("duration"):continue
+		taskTimeAeverage = 0
+		taskTimeMin = 9999
+		taskTimeTotal = 0
+		for user in userHistory:
+			if not userHistory[user].has_key("duration"):continue
 
-        taskTimeTotal = taskTimeTotal + userHistory[user]["duration"]
+			taskTimeTotal = taskTimeTotal + userHistory[user]["duration"]
 
-        if userHistory[user]["duration"] < taskTimeMin:
-            taskTimeMin = userHistory[user]["duration"]
+			if userHistory[user]["duration"] < taskTimeMin:
+				taskTimeMin = userHistory[user]["duration"]
 
-    taskTimeAeverage = taskTimeTotal / len(userHistory)
+		taskTimeAeverage = taskTimeTotal / len(userHistory)
 
-    for user in userHistory:
-        if not userHistory[user].has_key("duration"):continue
-        print taskID, user, str(userHistory[user]["duration"] / 60), str(round(taskTimeAeverage /60) ), \
-            str (taskTimeMin / 60), userHistory[user]["start"]
-        taskReport.write(taskID +"^" +
-                         user + "^" +
-                         str(userHistory[user]["duration"] / 60) + "^"+
-                         str(round(taskTimeAeverage /60) ) + "^"+
-                         str (taskTimeMin / 60) + "^" +
-                         userHistory[user]["start"] + "\r\n")
+		for user in userHistory:
+			if not userHistory[user].has_key("duration"):continue
+			print taskID, user, str(userHistory[user]["duration"] / 60), str(round(taskTimeAeverage /60) ), \
+				str (taskTimeMin / 60), userHistory[user]["start"]
+			taskReport.write(taskID +"^" +
+							 user + "^" +
+							 str(userHistory[user]["duration"] / 60) + "^"+
+							 str(round(taskTimeAeverage /60) ) + "^"+
+							 str (taskTimeMin / 60) + "^" +
+							 userHistory[user]["start"] + "\r\n")
 
-taskReport.close()
-print "done"
+	taskReport.close()
+	print "done"
 
+	
+if __name__ == "__mian__":
+	main()
 
 
 
