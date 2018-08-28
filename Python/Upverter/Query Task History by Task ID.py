@@ -63,8 +63,6 @@ def searchUpverterForum(content, opener=None):
 
 def parseHistory(taskHistoryPage):
     rawHistory = re.search(r'<tbody>((?:.|\n)*?)</tbody>',taskHistoryPage).group(0)
-	print rawHistory
-
     eleHistory = ET.fromstring(rawHistory)
 
     historyList = []
@@ -171,23 +169,44 @@ def getTasksInfo():
 	data.drop('factors__component_id', axis=1, inplace=True)
 		
 	requester = upverterLogin('frank.qiu', '123456',site='forum')
-	data['MPN'] = pd.np.NaN
-	data['posts'] = pd.np.NaN
-	data['class_L2'] = pd.np.NaN
+	data['MPN'] = pd.Series(pd.np.NaN, dtype='string')
+	data['posts'] = pd.Series(pd.np.NaN, dtype='string')
+	data['class_L2'] = pd.Series(pd.np.NaN, dtype='string')
 
 	for task_id,i in zip(data.index, xrange(len(data))):
-		sys.stdout.write('%s / %s\r' %(str(i+1), str(len(data))))
+		print '%s / %s %s\r' %(str(i+1), str(len(data)), task_id)
 
 		cmp_id = data['component_id'].loc[task_id]
 		try:
-			data.MPN, data.posts = fetchMPNbyTaskId(task_id, requester) 
-			data.class_L2 = fetchPartClass(cmp_id)
+			data.at[task_id, 'MPN'], data.at[task_id, 'posts'] = \
+										fetchMPNbyTaskId(task_id, requester) 
+			data.at[task_id, 'class_L2'] = fetchPartClass(cmp_id)
+			print '%s %s' %(data.at[task_id, 'MPN'], data.at[task_id, 'class_L2'])
 			
 		except:
 			data.to_csv(result)
 			print '\r\n' + task_id + ' is with something  wrong'
 			
 	data.to_csv(result)
+	
+def getTaskTime():
+data['task_time'] = pd.np.NaN
+req_upveter = upverterLogin('frank.qiu', '123456')
+
+task_time=[]
+for task_id,i in zip(data.index, xrange(len(data))):
+	print '%s / %s %s\r' %(str(i+1), str(len(data)), task_id)
+	userHistory = fetchTaskHistory(task_id, req_upveter)
+	
+	if userHistory:
+		task = {}
+		for k, j in zip(userHistory.keys(), xrange(len(userHistory))):
+			task['user_' + str(j)] = userHistory[k].get('duration',0)
+		
+		task_time.append(pd.DataFrame(task, index=[i]))
+	
+result = pd.concat(task_time)
+	
 
 def main():
 	taskIDList = ['02a7d26767e79a7b',

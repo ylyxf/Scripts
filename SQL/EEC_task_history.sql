@@ -17,7 +17,7 @@ select verified.component_id, verified.ts, verified.task_id from
 	from task_status_history__cts__verified_component
 ) verified
 where verified.Row_Num=1
-and (verified.ts at time zone 'UTC') > '2017-04-01' 
+and (verified.ts at time zone 'UTC') > '2018-04-01' 
 order by verified.ts;
 
 
@@ -54,7 +54,8 @@ on t.component_id = e.component_id
 group by e.component_id;
 
 
-select * from task_statuses__assigned where task_id='0009e3f5dec75d4b'
+select * from task_status_history__assigned where task_id='ac9b100d475ec598'
+select * from task_status_history__cts__verified_component where task_id='ac9b100d475ec598'
 select * from task_statuses__skipped where task_id='361fd7e4a135531a'
 
 
