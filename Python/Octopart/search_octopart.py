@@ -72,6 +72,7 @@ def get_batch(apiKey, uids, endpoint='part'):
 	
 	return json.loads(data)
 	
+	
 def write_parts(f, data, categoryName=None):
 	items = [result['item'] for result in data['results']]		
 	parts = pd.DataFrame(items)
@@ -80,7 +81,74 @@ def write_parts(f, data, categoryName=None):
 		
 	parts.to_csv(f, index=False, mode='a', encoding='utf-8',header=None)
 	
+	
 
+def convert_List2Dict(lst):
+	attr = {}
+	for i, suffix in zip(lst, xrange(len(lst))):
+		attr[str(suffix)] = i
+		
+	return attr
+
+	
+def extract_part_info(partData):
+	hits = partData.get('hits', 0)
+	parts = []
+	
+	if hits > 0:
+		for res in partData['results']:
+			part = {}
+			not_needed = ['redirected_uids', '__class__', 'offers', 'brand']
+			for term in not_needed:
+				res['item'].pop(term, None)			
+
+			for k in res['item'].keys():
+				if isinstance(res['item'][k], basestring):
+					part[k] = res['item'][k]
+					
+				elif isinstance(res['item'][k], list):
+					item = convert_List2Dict(res['item'][k])
+					for k_item in item.keys():
+						part[k+'_'+k_item] = item[k_item]	
+						
+				elif isinstance(res['item'][k], dict):
+					item = res['item'][k]
+					for k_item in item.keys():
+						part[k+'_'+k_item] = item[k_item]
+				
+				else:
+					part[k] = res['item'][k]						
+					
+			parts.append(pd.DataFrame(part, index=[part.get('uid', 0)]))		
+						
+	return parts
+	
+def get_part_classes:
+	material = pd.read_excel(r'I:\Scripts\Python\Upverter\Materials.xls')
+	mpns = material['MPN'].values
+	task_id = material['task_id'].values
+	result = []
+	status = ' '
+	for key_word, id, i in zip(mpns, task_id, xrange(len(mpns))):
+		sys.stdout.write(' ' * len(status) + '\r')
+		status = '%s / %s	%s	%s' %(str(i), str(len(mpns)), key_word, id)
+		sys.stdout.write(status + '\r')
+		
+		part_data = search_octopart(api_key, includes=('category_uids','short_description'),
+							query=key_word)
+		
+		if part_data:
+			extracted = extract_part_info(part_data)
+			for df in extracted:
+				df['task_id'] = id
+			result.extend(extracted)
+		
+		if (i%100) == 0:
+			pd.concat(result, sort=True).to_excel(r'I:\Scripts\Python\Upverter\Octopart_class.xls')
+	pd.concat(result, sort=True).to_excel(r'I:\Scripts\Python\Upverter\Octopart_class.xls')
+	
+	
+	
 root_uid = '8a1e4714bb3951d9'	
 categories_all = []
 category_root = get_batch(api_key, [root_uid], endpoint='categories')[root_uid]
