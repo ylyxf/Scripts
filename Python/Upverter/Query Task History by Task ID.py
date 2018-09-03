@@ -195,7 +195,7 @@ req_upveter = upverterLogin('frank.qiu', '123456')
 
 task_time=[]
 for task_id,i in zip(data.index, xrange(len(data))):
-	print '%s / %s %s\r' %(str(i+1), str(len(data)), task_id)
+	sys.stdout.write('%s / %s %s\r' %(str(i+1), str(len(data)), task_id))
 	userHistory = fetchTaskHistory(task_id, req_upveter)
 	
 	if userHistory:
@@ -203,7 +203,7 @@ for task_id,i in zip(data.index, xrange(len(data))):
 		for k, j in zip(userHistory.keys(), xrange(len(userHistory))):
 			task['user_' + str(j)] = userHistory[k].get('duration',0)
 		
-		task_time.append(pd.DataFrame(task, index=[i]))
+		task_time.append(pd.DataFrame(task, index=[task_id]))
 	
 result = pd.concat(task_time)
 	

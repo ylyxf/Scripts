@@ -124,28 +124,31 @@ def extract_part_info(partData):
 	return parts
 	
 def get_part_classes:
-	material = pd.read_excel(r'I:\Scripts\Python\Upverter\Materials.xls')
-	mpns = material['MPN'].values
-	task_id = material['task_id'].values
-	result = []
-	status = ' '
-	for key_word, id, i in zip(mpns, task_id, xrange(len(mpns))):
-		sys.stdout.write(' ' * len(status) + '\r')
-		status = '%s / %s	%s	%s' %(str(i), str(len(mpns)), key_word, id)
-		sys.stdout.write(status + '\r')
-		
+material = pd.read_excel(r'I:\Scripts\Python\Upverter\Materials.xls')
+mpns = material['MPN'].values
+task_id = material['task_id'].values
+result = []
+status = ' '
+for key_word, id, i in zip(mpns, task_id, xrange(len(mpns))):
+	sys.stdout.write(' ' * len(status) + '\r')
+	status = '%s / %s	%s	%s' %(str(i), str(len(mpns)), key_word, id)
+	sys.stdout.write(status + '\r')
+	
+	try:
 		part_data = search_octopart(api_key, includes=('category_uids','short_description'),
-							query=key_word)
-		
-		if part_data:
-			extracted = extract_part_info(part_data)
-			for df in extracted:
-				df['task_id'] = id
-			result.extend(extracted)
-		
-		if (i%100) == 0:
-			pd.concat(result, sort=True).to_excel(r'I:\Scripts\Python\Upverter\Octopart_class.xls')
-	pd.concat(result, sort=True).to_excel(r'I:\Scripts\Python\Upverter\Octopart_class.xls')
+									query=key_word)
+	except UnicodeError:
+		part_data = None
+	
+	if part_data:
+		extracted = extract_part_info(part_data)
+		for df in extracted:
+			df['task_id'] = id
+		result.extend(extracted)
+	
+	if (i%100) == 0:
+		pd.concat(result, sort=True).to_excel(r'I:\Scripts\Python\Upverter\Octopart_class.xls')
+pd.concat(result, sort=True).to_excel(r'I:\Scripts\Python\Upverter\Octopart_class.xls')
 	
 	
 	
